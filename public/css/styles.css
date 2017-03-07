@@ -1,3 +1,8 @@
 .mainImg {
   background-image: url("../img/barri.jpg");
+  height: 500px;
+}
+
+.mainImg h1 {
+	color:white;
 }
