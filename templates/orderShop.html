@@ -43,42 +43,102 @@
     <main>
         <div class="container">
             <div class="img-responsive mainImg">
-                <div class="panel panelMain">
-                    <h4>Usuario: Pepe</h4>
-                    <h4>Fruteria Pistacho</h4>
-                    <h3>Selecciona Productos</h3>
-                    <div class="col-md-6">
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox" value="">
-                                <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span> Frutas
-                            </label>
-                            <div class="col-md-3">
-                                <div class="checkbox">
+                <div class="panel">
+                    <section>
+                        <h4>Usuario: Pepe</h4>
+                        <h4>Fruteria Pistacho</h4>
+                        <h3>Selecciona Productos</h3>
+                        <div class="col-md-6">
+                            <div class="checkbox">
+                                <div class="col-md-8">
                                     <label>
-                                        <input type="checkbox" value="">
-                                        <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span> Manzanas
+                                        <input type="checkbox" value="" checked>
+                                        <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>Manzanas
                                     </label>
                                 </div>
+                                <div class="col-md-4">
+                                    <span>Cantidad:</span>
+                                    <input type="text" id="insQuantityOrder" value="5">
+                                </div>
                             </div>
-                            <label>
-                                <input type="checkbox" value="">
-                                <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span> Verduras
-                            </label>
-                            <label>
-                                <input type="checkbox" value="">
-                                <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span> Legumbres
-                            </label>
-                            <label>
-                                <input type="checkbox" value="">
-                                <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span> Frutos Secos
-                            </label>
-                            <label>
-                                <input type="checkbox" value="">
-                                <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span> Otros Prodcutos
-                            </label>
+                            <div class="checkbox">
+                                <div class="col-md-8">
+                                    <label>
+                                        <input type="checkbox" value="" checked>
+                                        <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>Peras
+                                    </label>
+                                </div>
+                                <div class="col-md-4">
+                                    <span>Cantidad:</span>
+                                    <input id="insQuantityOrder" type="text" value="4">
+                                </div>
+                            </div>
+                            <div class="checkbox">
+                                <div class="col-md-8">
+                                    <label>
+                                        <input type="checkbox" value="" checked>
+                                        <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>Platanos
+                                    </label>
+                                </div>
+                                <div class="col-md-4">
+                                    <span>Cantidad:</span>
+                                    <input id="insQuantityOrder" type="text" value="5">
+                                </div>
+                            </div>
+                            <div class="checkbox">
+                                <div class="col-md-8">
+                                    <label>
+                                        <input type="checkbox" value="" checked>
+                                        <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>Naranjas
+                                    </label>
+                                </div>
+                                <div class="col-md-4">
+                                    <span>Cantidad:</span>
+                                    <input id="insQuantityOrder" type="text" value="10">
+                                </div>
+                            </div>
+                            <div class="checkbox">
+                                <div class="col-md-8">
+                                    <label>
+                                        <input type="checkbox" value="" checked>
+                                        <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>Mandarinas
+                                    </label>
+                                </div>
+                                <div class="col-md-4">
+                                    <span>Cantidad:</span>
+                                    <input id="insQuantityOrder" type="text" value="15">
+                                </div>
+                            </div>
+                            <div class="checkbox">
+                                <div class="col-md-8">
+                                    <label>
+                                        <input type="checkbox" value="">
+                                        <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>Pistachos
+                                    </label>
+                                </div>
+                                <div class="col-md-4">
+                                    <span>Cantidad:</span>
+                                    <input id="insQuantityOrder" type="text" value="">
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                        <div class="col-md-6">
+                            <p>Productos en tu pedido
+                                <ul class="list-group">
+                                    <li>5 Manzanas</li>
+                                    <li>4 Peras</li>
+                                    <li>5 Platanos</li>
+                                    <li>10 Naranjas</li>
+                                    <li>15 Mandarinas</li>
+                                </ul>
+                        </div>
+                    </section>
+                    <section>
+                        <br/>
+                        <label>Comentarios a tu pedido</label>
+                        <textarea id="insCommentsOrder" class="form-control" rows="4" placeholder="indicar comentarios si se precisa"></textarea>
+                        <button id="btn_ConfirmOrder"><a style="color: black" href="sendMail.html">Confirmar Pedido</a></button>
+                    </section>
                 </div>
             </div>
         </div>

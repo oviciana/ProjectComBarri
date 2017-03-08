@@ -1,7 +1,7 @@
-* {
+/** {
   border: 1px solid black;
   padding: 0px;
-}
+}*/
 
 .mainImg {
 	background-image: url("../img/barri.jpg");
@@ -14,14 +14,16 @@
 }
 
 .panel {
-	opacity: 0.8;
+	opacity: 0.85;
+	padding: 1rem 1rem;
+	height: 500px
 }
 
-.panelMain {
-	opacity: 0.8;
+/*.panelMain {
+	opacity: 0.85;
 	height: 500px;
 	padding: 1rem 1rem;
-}
+}*/
 
 /* page orderShop drop check box list ---------------*/
 
@@ -38,8 +40,8 @@
     display: inline-block;
     border: 1px solid #a9a9a9;
     border-radius: .25em;
-    width: 1.3em;
-    height: 1.3em;
+	  width: 1.3em;
+	  height: 1.3em;
     float: left;
     margin-right: .5em;
 }
@@ -131,3 +133,32 @@
   border-color: #009ac9;
 }
 
+#btn_ConfirmOrder {
+  /*margin: 0 auto;*/
+  font-size: 1.5rem;
+  padding: 1rem 1rem;
+  display: block;
+  background-color: #009ac9;
+  border: 1px solid transparent;
+  color: #ffffff;
+  font-weight: 300;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+#btn_ConfirmOrder:hover {
+  background-color: #ffffff;
+	color: #009ac9;
+  border-color: #009ac9;
+}
+
+#insQuantityOrder {
+	width: 3rem
+}
+
+#insCommentsOrder {
+	width: : 0 auto;
+}
