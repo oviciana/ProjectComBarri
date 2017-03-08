@@ -27,7 +27,7 @@
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="user.html">Usuaris</a></li>
+                        <li class="active"><a href="users.html">Usuaris</a></li>
                         <li class="hidden"><a href="signInShops.html">Comerços</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
@@ -42,42 +42,48 @@
     </header>
     <main>
         <div class="container">
-            <form class="form-horizontal">
-                <fieldset>
-                    <!-- Form Name -->
-                    <!--<legend>Form Name</legend>-->
-                    <!-- Appended Input-->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="getZipCode">Codi Postal</label>
-                        <div class="col-md-4">
-                            <div class="input-group">
-                                <input id="getZipCode" name="getZipCode" class="form-control" type="text" value="08999">
-                                <input id="getCategory" name="getCategory" class="form-control" type="text" value="Frutería">
+            <div class="img-responsive mainImg">
+                <form class="form-horizontal">
+                    <div class="panel panelMain">
+                        <h4>Usuario: Pepe</h4>
+                        <!-- <fieldset> -->
+                        <!-- Form Name -->
+                        <!--<legend>Form Name</legend>-->
+                        <!-- Appended Input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="getZipCode">Codi Postal</label>
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <input id="getZipCode" name="getZipCode" class="form-control" type="text" value="08999">
+                                    <input id="getCategory" name="getCategory" class="form-control" type="text" value="Fruterías">
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="container">
-                        <div class="row-fluid">
-                            <div class="col-md-6">
-                                <iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.uk/maps?f=q&source=s_q&hl=en&geocode=&q=15+Springfield+Way,+Hythe,+CT21+5SH&aq=t&sll=52.8382,-2.327815&sspn=8.047465,13.666992&ie=UTF8&hq=&hnear=15+Springfield+Way,+Hythe+CT21+5SH,+United+Kingdom&t=m&z=14&ll=51.077429,1.121722&output=embed"></iframe>
+                        <!-- <div class="container"> -->
+                            <div class="row-fluid">
+                                <div class="col-md-6">
+                                    <iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.uk/maps?f=q&source=s_q&hl=en&geocode=&q=15+Springfield+Way,+Hythe,+CT21+5SH&aq=t&sll=52.8382,-2.327815&sspn=8.047465,13.666992&ie=UTF8&hq=&hnear=Fruteria+Pistacho,+Hythe+CT21+5SH,+United+Kingdom&t=m&z=14&ll=51.077429,1.121722&output=embed"></iframe>
+                                </div>
+                                <div class="col-md-6">
+                                    <h2>Fruteria Pistacho</h2>
+                                    <address>
+                                        <strong></strong>
+                                        <br> 15 Springfield Way
+                                        <br> Hythe
+                                        <br> Kent
+                                        <br> United Kingdon
+                                        <br> CT21 5SH
+                                        <br>
+                                        <abbr title="Phone">P:</abbr> 01234 567 890
+                                    </address>
+                                    <button id="btn_SelectShop" type="button"><a style="color:black" href="orderShop.html">Seleccionar</a></button>
+                                </div>
                             </div>
-                            <div class="col-md-6">
-                                <h2>Fruteria Pistacho</h2>
-                                <address>
-                                    <strong></strong>
-                                    <br> 15 Springfield Way
-                                    <br> Hythe
-                                    <br> Kent
-                                    <br> United Kingdon
-                                    <br> CT21 5SH
-                                    <br>
-                                    <abbr title="Phone">P:</abbr> 01234 567 890
-                                </address>
-                            </div>
-                        </div>
+                        <!-- </div> -->
+                        <!-- </fieldset> -->
                     </div>
-                </fieldset>
-            </form>
+                </form>
+            </div>
         </div>
     </main>
     <footer></footer>
