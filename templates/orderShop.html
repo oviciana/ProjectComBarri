@@ -12,33 +12,28 @@
 
 <body>
     <header id="header" class="">
-    </header>
-    <div class="container">
-        <nav class="navbar navbar-default">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="index.html">ComBarri</a>
+        <div class="container">
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a href="index.html">
+                            <img src="../public/img/logo.jpg" alt="logo" height="50" width="50">
+                        </a>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="users.html">Usuaris</a></li>
+                            <li class="hidden"><a href="signInShops.html">Comerços</a></li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="hidden"><a href="signInUsers.html">Login</a></li>
+                            <li><a href="index.html">Logout</a></li>
+                            <li><a href="about.html">About</a></li>
+                        </ul>
+                    </div>
                 </div>
-                <div id="navbar" class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="users.html">Usuaris</a></li>
-                        <li class="hidden"><a href="signInShops.html">Comerços</a></li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="hidden"><a href="signInUsers.html">Login</a></li>
-                        <li><a href="index.html">Logout</a></li>
-                        <li><a href="about.html">About</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </div>
+            </nav>
+        </div>
     </header>
     <main>
         <div class="container">
@@ -137,8 +132,28 @@
                         <br/>
                         <label>Comentarios a tu pedido</label>
                         <textarea id="insCommentsOrder" class="form-control" rows="4" placeholder="indicar comentarios si se precisa"></textarea>
-                        <button id="btn_ConfirmOrder"><a style="color: black" href="sendMail.html">Confirmar Pedido</a></button>
+                        <button id="btn_ConfirmOrder" data-toggle="modal" data-target="#sendOrder" id="launch">Confirmar pedido</button>
+                        <!-- <button id="btn_ConfirmOrder"><a style="color: black" href="sendMail.html">Confirmar Pedido</a></button>-->
                     </section>
+                    <!-- Modal -->
+                    <div class="modal fade" id="sendOrder" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel">Enviar Pedido al Comercio</h4>
+                                </div>
+                                <div class="modal-body">
+                                </div>
+                                <div class="modal-footer">
+                                    <form class="" , action='/sendMail'>
+                                        <button id="btnCancelOrder" type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                                        <button id="btnSendOrder" type="submit" class="btn btn-primary">Enviar Correo</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -146,6 +161,7 @@
     <footer></footer>
     <script src="../public/bower_components/jquery/dist/jquery.min.js"></script>
     <script src="../public/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../sendMail.js"></script>
 </body>
 
 </html>

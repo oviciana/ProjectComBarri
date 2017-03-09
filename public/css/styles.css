@@ -3,7 +3,7 @@
   padding: 0px;
 }*/
 
-.mainImg {
+/*.mainImg {
 	background-image: url("../img/barri.jpg");
 	opacity: 1;
   height: 500px;
@@ -11,18 +11,6 @@
 
 .mainImg h1 {
 	color:white;
-}
-
-.panel {
-	opacity: 0.85;
-	padding: 1rem 1rem;
-	height: 500px
-}
-
-/*.panelMain {
-	opacity: 0.85;
-	height: 500px;
-	padding: 1rem 1rem;
 }*/
 
 /* page orderShop drop check box list ---------------*/
@@ -87,8 +75,6 @@
 }*/
 
 /*---------------------------------------------------*/
-
-
 
 #btn_SearchShops {
   font-size: 1.5rem;

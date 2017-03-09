@@ -6,6 +6,7 @@
   "scripts": {
     "prestart": "npm install",
     "dev": "nodemon app",
+    "dev2": "node sendMail.js",
     "postinstall": "./node_modules/bower/bin/bower install",
     "start": "node app"
   },
@@ -16,7 +17,8 @@
     "body-parser": "^1.17.1",
     "bower": "^1.8.0",
     "express": "^4.15.2",
-    "mongoose": "^4.8.6"
+    "mongoose": "^4.8.6",
+    "nodemailer": "^3.1.5"
   },
   "devDependencies": {
     "nodemon": "^1.11.0"
