@@ -6,7 +6,7 @@ const express = require('express')
 // const Shops = require('./models/Shops.js')
 // const ShopProducts = require('./models/ShopProducts.js')
 // const UserOrders = require('./models/UserOrders.js')
-// const PORT = 3010
+const PORT = process.env.PORT || 3010
 const app = express()
 
 // mongoose.Promise = global.Promise
@@ -26,4 +26,4 @@ const app = express()
 // })
 
 
-// app.listen(PORT,() =>	console.log(`listening on port ${PORT}...`)) 
+app.listen(PORT,() =>	console.log(`listening on port ${PORT}...`)) 
