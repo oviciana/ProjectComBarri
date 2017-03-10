@@ -2,7 +2,10 @@
   "name": "ProjectComBarri",
   "version": "1.0.0",
   "description": "",
-  // "main": "index.js",
+  "engines": {
+    "node": "6.9.4"
+  },
+  "main": "index.js",
   "scripts": {
     "prestart": "npm install",
     "dev": "nodemon app",
