@@ -1,12 +1,12 @@
 const path = require('path')
 const express = require('express')
-const bodyParser = require('body-parser')
-const mongoose = require('mongoose')
-const Users = require('./models/Users.js')
-const Shops = require('./models/Shops.js')
-const ShopProducts = require('./models/ShopProducts.js')
-const UserOrders = require('./models/UserOrders.js')
-const PORT = 3010
+// const bodyParser = require('body-parser')
+// const mongoose = require('mongoose')
+// const Users = require('./models/Users.js')
+// const Shops = require('./models/Shops.js')
+// const ShopProducts = require('./models/ShopProducts.js')
+// const UserOrders = require('./models/UserOrders.js')
+// const PORT = 3010
 const app = express()
 
 // mongoose.Promise = global.Promise
