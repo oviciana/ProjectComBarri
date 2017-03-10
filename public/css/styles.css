@@ -12,6 +12,13 @@
 .mainImg h1 {
 	color:white;
 }*/
+.navLogo {
+  padding-right: 10px;
+}
+
+.panel-title:hover {
+     cursor: pointer;
+}
 
 /* page orderShop drop check box list ---------------*/
 
