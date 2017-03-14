@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Comerços al barri</title>
+    <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+    <header id="header" class="">
+        <div class="container">
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-header navLogo">
+                        <a href="index.html">
+                            <img src="./img/logoCB.jpg" alt="logo" height="50" width="50">
+                        </a>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="users.html">Usuaris</a></li>
+                            <li class="hidden"><a href="signInShops.html">Comerços</a></li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="hidden"><a href="signInUsers.html">Login</a></li>
+                            <li><a href="index.html">Logout</a></li>
+                            <li><a href="about.html">About</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="img-responsive mainImg">
+                <div class="panel">
+                    <section>
+                        <h4>Usuario: Pepe</h4>
+                        <h4>Fruteria Pistacho</h4>
+                        <h3>Selecciona Productos</h3>
+                        <div class="col-md-6">
+                            <div class="checkbox">
+                                <div class="col-md-8">
+                                    <label>
+                                        <input type="checkbox" value="" checked>
+                                        <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>Manzanas
+                                    </label>
+                                </div>
+                                <div class="col-md-4">
+                                    <span>Cantidad:</span>
+                                    <input type="text" id="insQuantityOrder" value="5">
+                                </div>
+                            </div>
+                            <div class="checkbox">
+                                <div class="col-md-8">
+                                    <label>
+                                        <input type="checkbox" value="" checked>
+                                        <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>Peras
+                                    </label>
+                                </div>
+                                <div class="col-md-4">
+                                    <span>Cantidad:</span>
+                                    <input id="insQuantityOrder" type="text" value="4">
+                                </div>
+                            </div>
+                            <div class="checkbox">
+                                <div class="col-md-8">
+                                    <label>
+                                        <input type="checkbox" value="" checked>
+                                        <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>Platanos
+                                    </label>
+                                </div>
+                                <div class="col-md-4">
+                                    <span>Cantidad:</span>
+                                    <input id="insQuantityOrder" type="text" value="5">
+                                </div>
+                            </div>
+                            <div class="checkbox">
+                                <div class="col-md-8">
+                                    <label>
+                                        <input type="checkbox" value="" checked>
+                                        <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>Naranjas
+                                    </label>
+                                </div>
+                                <div class="col-md-4">
+                                    <span>Cantidad:</span>
+                                    <input id="insQuantityOrder" type="text" value="10">
+                                </div>
+                            </div>
+                            <div class="checkbox">
+                                <div class="col-md-8">
+                                    <label>
+                                        <input type="checkbox" value="" checked>
+                                        <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>Mandarinas
+                                    </label>
+                                </div>
+                                <div class="col-md-4">
+                                    <span>Cantidad:</span>
+                                    <input id="insQuantityOrder" type="text" value="15">
+                                </div>
+                            </div>
+                            <div class="checkbox">
+                                <div class="col-md-8">
+                                    <label>
+                                        <input type="checkbox" value="">
+                                        <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>Pistachos
+                                    </label>
+                                </div>
+                                <div class="col-md-4">
+                                    <span>Cantidad:</span>
+                                    <input id="insQuantityOrder" type="text" value="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <p>Productos en tu pedido
+                                <ul class="list-group">
+                                    <li>5 Manzanas</li>
+                                    <li>4 Peras</li>
+                                    <li>5 Platanos</li>
+                                    <li>10 Naranjas</li>
+                                    <li>15 Mandarinas</li>
+                                </ul>
+                        </div>
+                    </section>
+                    <section>
+                        <br/>
+                        <label>Comentarios a tu pedido</label>
+                        <textarea id="insCommentsOrder" class="form-control" rows="4" placeholder="indicar comentarios si se precisa"></textarea>
+                        <button id="btn_ConfirmOrder" data-toggle="modal" data-target="#sendOrder" id="launch">Confirmar pedido</button>
+                        <!-- <button id="btn_ConfirmOrder"><a style="color: black" href="sendMail.html">Confirmar Pedido</a></button>-->
+                    </section>
+                    <!-- Modal -->
+                    <div class="modal fade" id="sendOrder" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel">Enviar Pedido al Comercio</h4>
+                                </div>
+                                <div class="modal-body">
+                                </div>
+                                <div class="modal-footer">
+                                    <form class="" , action='/sendMail'>
+                                        <button id="btnCancelOrder" type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                                        <button id="btnSendOrder" type="submit" class="btn btn-primary">Enviar Correo</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer></footer>
+    <script src="./bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./js/sendMail.js"></script>
+</body>
+
+</html>
