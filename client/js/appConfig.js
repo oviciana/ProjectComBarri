@@ -13,11 +13,11 @@
         controller: 'orderShopController',
         controllerAs: 'vm'
       })
-      // .when('/category/:categoryURL', {
-      //   templateUrl: 'app/category/category.tpl.html',
-      //   controller: 'CategoryController',
-      //   controllerAs: 'vm'
-      // })
+      .when('/shops/:zipCode/:bussinessType', {
+        templateUrl: 'views/listShops.html',
+        controller: 'listShopsController',
+        controllerAs: 'vm'
+      })
       // .when('/author/:author', {
       //   templateUrl: 'app/author/author.tpl.html',
       //   controller: 'AuthorController',
