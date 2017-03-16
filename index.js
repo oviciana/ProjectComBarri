@@ -22,9 +22,9 @@ mongoose.connect(urlDB)
 		console.log("success to connect " + urlDB)
 	})
 
-app.get('/shops/:zipCode/:bussinessType', (req,res) => {
-	const { zipCode, bussinessType } = req.params
-	shops.find( {'address.zipCode' : zipCode, 'bussinessType' : bussinessType} )
+app.get('/shops/zipCode/:zipCode', (req,res) => {
+	const { zipCode } = req.params
+	shops.find( {'address.zipCode' : zipCode} )
     .then( shopFind => res.status(200).json(shopFind) )
     .catch( errShopFind => res.status(500).json(errShopFind).send(`Shop not found`) )
 })
@@ -36,16 +36,16 @@ app.get('/shops/bussinessType/:bussinessType', (req,res) => {
     .catch( errShopFind => res.status(500).json(errShopFind).send(`Shop not found`) )
 })
 
-app.get('/shops/zipCode/:zipCode', (req,res) => {
-	const { zipCode } = req.params
-	shops.find( {'address.zipCode' : zipCode} )
+app.get('/shop/:id', (req,res) => {
+	const { id } = req.params
+	shops.findById( id )
     .then( shopFind => res.status(200).json(shopFind) )
     .catch( errShopFind => res.status(500).json(errShopFind).send(`Shop not found`) )
 })
 
-app.get('/shop/:id', (req,res) => {
-	const { id } = req.params
-	shops.findById( id )
+app.get('/shops/:zipCode/:bussinessType', (req,res) => {
+	const { zipCode, bussinessType } = req.params
+	shops.find( {'address.zipCode' : zipCode, 'bussinessType' : bussinessType} )
     .then( shopFind => res.status(200).json(shopFind) )
     .catch( errShopFind => res.status(500).json(errShopFind).send(`Shop not found`) )
 })

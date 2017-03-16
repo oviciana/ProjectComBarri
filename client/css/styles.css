@@ -12,6 +12,24 @@
 /*.mainImg h1 {
 	color:white;
 }*/
+/*body {
+  font-family: 'Sofia';
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}*/
+
+.banner-section {
+  background-image: url("../img/barri.jpg");
+  height: 200px;
+}
+
+.banner-section h1 {
+  font-family: 'Sofia';
+  font-size: 60px;
+  color: white;
+  padding-top: 50px;
+
+}
 
 .navLogo {
   padding-right: 10px;

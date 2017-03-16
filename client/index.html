@@ -6,11 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Comercios de barrio</title>
-    <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./css/styles.css">
+    <link href='//fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
     <script src="bower_components/angular/angular.min.js"></script>
     <script src="bower_components/angular-route/angular-route.min.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.min.js"></script>
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -18,18 +21,18 @@
         <div ng-include src="'views/navbar.html'"></div>
     </header>
     <main>
-        <ng-view autoscroll="true"></ng-view>
+        <div class="container">
+            <ng-view autoscroll="true"></ng-view>
+        </div>
     </main>
     <footer></footer>
-    <script src="./bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-
     <script src="js/appModule.js"></script>
     <script src="js/appConfig.js"></script>
     <script src="js/appConstants.js"></script>
     <script src="js/factories/comBarrioFactory.js"></script>
     <script src="js/controllers/listShopsController.js"></script>
     <script src="js/controllers/orderShopController.js"></script>
+    <script src="js/accordionOrders.js"></script>
 </body>
 
 </html>

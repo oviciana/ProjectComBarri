@@ -12,6 +12,7 @@
     comBarrioFactory.getListShops(zipCode,bussinesType)
     .then(function (response) {
       vm.listShops = response
+console.log(response)
     })
   }
 })()

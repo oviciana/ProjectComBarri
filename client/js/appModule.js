@@ -1,4 +1,1 @@
-angular.module('comBarrioApp', [
-  'ngRoute',
-  'ngResource'
-])
+angular.module('comBarrioApp', ['ngRoute','ngResource'])

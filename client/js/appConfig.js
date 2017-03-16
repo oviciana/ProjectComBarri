@@ -1,13 +1,14 @@
 (function () {
-  angular
-  .module('comBarrioApp')
-  .config([
-    '$routeProvider',
-    routerConfig
-  ])
+  angular.module('comBarrioApp')
+  .config(['$routeProvider',routerConfig])
 
   function routerConfig ($routeProvider) {
     $routeProvider
+      .when('/', {
+        templateUrl: 'views/infoPage.html',
+        controller: 'infoController',
+        controllerAs: 'vm'        
+      })
       .when('/shops/:id', {
         templateUrl: 'views/orderShop.html',
         controller: 'orderShopController',
@@ -18,11 +19,6 @@
         controller: 'listShopsController',
         controllerAs: 'vm'
       })
-      // .when('/author/:author', {
-      //   templateUrl: 'app/author/author.tpl.html',
-      //   controller: 'AuthorController',
-      //   controllerAs: 'vm'
-      // })
       .otherwise('/')
   }
 })()
