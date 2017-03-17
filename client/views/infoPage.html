@@ -7,3 +7,16 @@
     <p>ComBarrio te permite hacer encargos a las tiendas de tu barrio para que tu compra esté preparada a la hora que indiques.</p>
     <p>ComBarrio envia, vía correo electrónico, tu lista de la compra al comercio de tu barrio que elijas.</p>
 </div>
+<!-- <form action="" method="" class="form-inline" role="form" ng-submit="vm.searchZipCode($event)"> -->
+<form action="" method="" class="form-inline" role="form">
+    <div class="form-group">
+        <!-- <div class="input-group"> -->
+        <label class="control-label" for="getZipCode">Selecciona un barrio</label>
+        <input id="getZipCode" name="zipCode" class="form-control" placeholder="dime el código postal de tu barrio" type="text" ng-model="zipCode">
+    </div>
+    <!-- <button id="btn_SearchShops"><a style="color: black" href="listShops.html">Buscar</a></button> -->
+    <button id="btn_SearchShops" type="submit">
+        <a style="color: black" role="button" href="#!/shops/zipCode/{{zipCode}}">Buscar</a>
+    </button>
+    <!-- </div> -->
+</form>

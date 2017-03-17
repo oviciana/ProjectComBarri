@@ -6,19 +6,22 @@
     $routeProvider
       .when('/', {
         templateUrl: 'views/infoPage.html',
-        controller: 'infoController',
-        controllerAs: 'vm'        
+//        controller: 'infoController',
+//        controllerAs: 'vm'        
       })
-      .when('/shops/:id', {
-        templateUrl: 'views/orderShop.html',
-        controller: 'orderShopController',
-        controllerAs: 'vm'
-      })
-      .when('/shops/:zipCode/:bussinessType', {
+
+      .when('/shops/zipCode/:zipCode', {
         templateUrl: 'views/listShops.html',
         controller: 'listShopsController',
         controllerAs: 'vm'
       })
+
+      .when('/shop/:id', {
+        templateUrl: 'views/orderShop.html',
+        controller: 'orderShopController',
+        controllerAs: 'vm'
+      })
+      
       .otherwise('/')
   }
 })()

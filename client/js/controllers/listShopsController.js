@@ -1,18 +1,18 @@
-(function () {
+(function() {
   angular.module('comBarrioApp')
     .controller('listShopsController', [
-      '$routeParams',
       'comBarrioFactory',
-      FindShops
+      '$routeParams',
+      searchShops
     ])
-  function FindShops ($routeParams, comBarrioFactory) {
+
+  function searchShops(comBarrioFactory, $routeParams) {
     var vm = this
-    var zipCode = $routeParams.zipCode
-    var bussinesType = $routeParams.bussinesType
-    comBarrioFactory.getListShops(zipCode,bussinesType)
-    .then(function (response) {
-      vm.listShops = response
-console.log(response)
+    comBarrioFactory.getShopsZipCode($routeParams.zipCode)
+    .then(function(response) {
+      vm.zipCode = $routeParams.zipCode
+      vm.shopsFound = response
     })
   }
 })()
+
