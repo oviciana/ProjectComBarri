@@ -3,6 +3,21 @@
   padding: 0px;
 }*/
 
+/* blink efect *********************************/
+.pendingResolve {
+  animation: blinker 3s linear infinite;
+  /*-webkit-animation-name: blinker;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;*/
+  color: red;
+}
+
+@keyframes blinker {  
+  50% { opacity: 0; }
+}
+/***********************************************/
+
 /*.mainImg {
 	background-image: url("../img/memoPad.jpg");
 	opacity: 1;

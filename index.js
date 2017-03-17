@@ -7,7 +7,7 @@ const shops = require('./server/models/shops.js')
 // const shopProducts = require('./server/models/shopProducts.js')
 // const userOrders = require('./server/models/userOrders.js')
 const PORT = process.env.PORT || 3010
-const urlDB = process.env.urlDB || 'mongodb://localhost:27017/combarrio'
+const urlDB = process.env.DB_URI || 'mongodb://localhost:27017/combarrio'
 const app = express()
 
 mongoose.Promise = global.Promise

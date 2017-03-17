@@ -1,144 +1,28 @@
 <div class="panel">
     <section>
-        <h4>Usuario: Pepe</h4>
-        <h4>Fruteria Pistacho</h4>
-        <h3>Selecciona Productos</h3>
+        <h3>{{ vm.shop.name }}</h3>
+        <h4>Selecciona Productos</h4>
         <div class="col-md-6">
             <!-- Begin accordion ******************************************************* -->
             <div class="panel-group" id="accordion">
                 <!-- First Panel ******************************************************* -->
-                <div class="panel panel-default">
+                <div class="panel panel-default" ng-repeat="product in vm.shop.products">
+                 <!-- ng-options="product.category for product in vm.shop.products | unique:'category'"> -->
                     <div class="panel-heading">
-                        <h4 class="panel-title" data-toggle="collapse" data-target="#collapseOne">Frutas</h4>
+                        <h4 class="panel-title" data-toggle="collapse" data-target="#collapseOne" ng-model="product.category">{{ product.category }}</h4>
                     </div>
                     <div id="collapseOne" class="panel-collapse collapse">
                         <div class="panel-body">
-                            <div class="checkbox">
+                            <div class="checkbox" ng-repeat="product in vm.shop.products | filter: product.category">
                                 <div class="col-md-8">
                                     <label>
-                                        <input type="checkbox" value="" checked>
-                                        <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>Manzanas
+                                        <input type="checkbox" value="">
+                                        <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>{{product.name}}
                                     </label>
                                 </div>
                                 <div class="col-md-4">
                                     <span>Cantidad:</span>
                                     <input type="text" id="insQuantityOrder" value="5">
-                                </div>
-                            </div>
-                            <div class="checkbox">
-                                <div class="col-md-8">
-                                    <label>
-                                        <input type="checkbox" value="" checked>
-                                        <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>Peras
-                                    </label>
-                                </div>
-                                <div class="col-md-4">
-                                    <span>Cantidad:</span>
-                                    <input id="insQuantityOrder" type="text" value="4">
-                                </div>
-                            </div>
-                            <div class="checkbox">
-                                <div class="col-md-8">
-                                    <label>
-                                        <input type="checkbox" value="" checked>
-                                        <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>Platanos
-                                    </label>
-                                </div>
-                                <div class="col-md-4">
-                                    <span>Cantidad:</span>
-                                    <input id="insQuantityOrder" type="text" value="5">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Second Panel ******************************************************* -->
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4 class="panel-title" data-toggle="collapse" data-target="#collapseTwo">Verduras</h4>
-                    </div>
-                    <div id="collapseTwo" class="panel-collapse collapse">
-                        <div class="panel-body">
-                            <div class="checkbox">
-                                <div class="col-md-8">
-                                    <label>
-                                        <input type="checkbox" value="" checked>
-                                        <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>Acelgas
-                                    </label>
-                                </div>
-                                <div class="col-md-4">
-                                    <span>Cantidad:</span>
-                                    <input type="text" id="insQuantityOrder" value="5">
-                                </div>
-                            </div>
-                            <div class="checkbox">
-                                <div class="col-md-8">
-                                    <label>
-                                        <input type="checkbox" value="" checked>
-                                        <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>Judías Verdes
-                                    </label>
-                                </div>
-                                <div class="col-md-4">
-                                    <span>Cantidad:</span>
-                                    <input id="insQuantityOrder" type="text" value="4">
-                                </div>
-                            </div>
-                            <div class="checkbox">
-                                <div class="col-md-8">
-                                    <label>
-                                        <input type="checkbox" value="" checked>
-                                        <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>Tomates
-                                    </label>
-                                </div>
-                                <div class="col-md-4">
-                                    <span>Cantidad:</span>
-                                    <input id="insQuantityOrder" type="text" value="5">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Third Panel ******************************************************* -->
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4 class="panel-title" data-toggle="collapse" data-target="#collapseThree">Otros</h4>
-                    </div>
-                    <div id="collapseThree" class="panel-collapse collapse">
-                        <div class="panel-body">
-                            <div class="checkbox">
-                                <div class="col-md-8">
-                                    <label>
-                                        <input type="checkbox" value="" checked>
-                                        <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>Miel
-                                    </label>
-                                </div>
-                                <div class="col-md-4">
-                                    <span>Cantidad:</span>
-                                    <input type="text" id="insQuantityOrder" value="5">
-                                </div>
-                            </div>
-                            <div class="checkbox">
-                                <div class="col-md-8">
-                                    <label>
-                                        <input type="checkbox" value="" checked>
-                                        <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>Agua 5l
-                                    </label>
-                                </div>
-                                <div class="col-md-4">
-                                    <span>Cantidad:</span>
-                                    <input id="insQuantityOrder" type="text" value="4">
-                                </div>
-                            </div>
-                            <div class="checkbox">
-                                <div class="col-md-8">
-                                    <label>
-                                        <input type="checkbox" value="" checked>
-                                        <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>Patatas Fritas
-                                    </label>
-                                </div>
-                                <div class="col-md-4">
-                                    <span>Cantidad:</span>
-                                    <input id="insQuantityOrder" type="text" value="5">
                                 </div>
                             </div>
                         </div>

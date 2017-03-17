@@ -16,17 +16,17 @@
       function getShopProducts(idShop){
         var url = constApp.urlMain + '/shop/' + idShop
         return $http.get(url)
-      }
-
-      function getListShops(zipCode,bussinesType) {
-        var url = constApp.urlMain + '/shop/' + zipCode + '/' + bussinesType
-        return $http.get(url)
+        .then(function (response) {
+            return response.data
+          }).catch(function (error) {
+            return error
+          })
       }
 
       return {
         getShopsZipCode: getShopsZipCode,
         getShopProducts: getShopProducts,
-        getListShops   : getListShops,
+
       }
     })
 })()

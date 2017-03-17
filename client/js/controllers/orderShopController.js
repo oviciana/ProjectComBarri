@@ -8,7 +8,7 @@
     ])
   function ProductsShopController ($routeParams, comBarrioFactory) {
     var vm = this
-    var idShop = $routeParams.idShop
+    const idShop = $routeParams.id
     comBarrioFactory.getShopProducts(idShop)
     .then(function (response) {
       vm.shop = response
