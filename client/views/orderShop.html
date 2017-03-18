@@ -4,19 +4,20 @@
         <h4>Selecciona Productos</h4>
         <div class="col-md-6">
             <!-- Begin accordion ******************************************************* -->
-            <div class="panel-group" id="accordion">
+            <div class="panel-group" id="accordion" ng-repeat="category in vm.categories" >
                 <!-- First Panel ******************************************************* -->
-                <div class="panel panel-default" ng-repeat="product in vm.shop.products">
-                 <!-- ng-options="product.category for product in vm.shop.products | unique:'category'"> -->
+                <div class="panel panel-default">
+                    <!-- ng-options="product.category for product in vm.shop.products | unique:'category'"> -->
                     <div class="panel-heading">
-                        <h4 class="panel-title" data-toggle="collapse" data-target="#collapseOne" ng-model="product.category">{{ product.category }}</h4>
+                        <h4 class="panel-title" data-toggle="collapse" data-target="#collapse" >{{ category }}</h4>
                     </div>
-                    <div id="collapseOne" class="panel-collapse collapse">
+                    <div id="collapse" class="panel-collapse collapse">
                         <div class="panel-body">
-                            <div class="checkbox" ng-repeat="product in vm.shop.products | filter: product.category">
+                            <!-- <div class="checkbox" ng-repeat="product in vm.shop.products | filter: product"> -->
+                            <div id="checkboxes" class="checkbox" ng-repeat="product in vm.shop.products">
                                 <div class="col-md-8">
                                     <label>
-                                        <input type="checkbox" value="">
+                                        <input type="checkbox" ng-model="selItems.name[product.name]">
                                         <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>{{product.name}}
                                     </label>
                                 </div>
@@ -33,14 +34,11 @@
         </div>
         <div class="col-md-6 memoPad img-responsive">
             <div class="memoPad2">
-                <p>Productos en tu pedido
-                    <ul class="list-group">
-                        <li>5 Manzanas</li>
-                        <li>4 Peras</li>
-                        <li>5 Platanos</li>
-                        <li>10 Naranjas</li>
-                        <li>15 Mandarinas</li>
-                    </ul>
+                <p>Productos en tu pedido</p>
+                {{ selItems }}
+                <ul class="list-group" ng-repeat="item in selItems">
+                    <li>{{item.name}}</li>
+                </ul>
             </div>
         </div>
     </section>
