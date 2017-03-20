@@ -1,76 +1,87 @@
+/* design all the boxes (developing)---------------- */
 /** {
-  border: 1px solid black;
-  padding: 0px;
+    border: 1px solid black;
+    padding: 0px;
 }*/
 
-/* blink efect *********************************/
-.pendingResolve {
-  animation: blinker 3s linear infinite;
-  /*-webkit-animation-name: blinker;
-    -webkit-animation-duration: 1s;
-    -webkit-animation-timing-function: linear;
-    -webkit-animation-iteration-count: infinite;*/
-  color: red;
+/* blink efect (developing)--------------------------*/
+/*.pendingResolve {
+    animation: blinker 3s linear infinite;
+    color: red;
 }
 
-@keyframes blinker {  
-  50% { opacity: 0; }
-}
-/***********************************************/
-
-/*.mainImg {
-	background-image: url("../img/memoPad.jpg");
-	opacity: 1;
-  height: 500px;
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
 }*/
-
-/*.mainImg h1 {
-	color:white;
-}*/
-/*body {
-  font-family: 'Sofia';
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-}*/
-
-.banner-section {
-  background-image: url("../img/barri.jpg");
-  height: 200px;
-}
-
-.banner-section h1 {
-  font-family: 'Sofia';
-  font-size: 60px;
-  color: white;
-  padding-top: 50px;
-
+/*---------------------------------------------------*/
+.navbar {
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .navLogo {
-  padding-right: 10px;
+    padding-top: 3px;
+    padding-right: 15px;
+}
+
+.banner-section {
+    background-image: url("../img/barri.jpg");
+    height: 180px;
+}
+
+.banner-section h1 {
+    font-family: 'Sofia';
+    font-size: 60px;
+    color: white;
+    margin: 0px;
+    padding: 50px;
+}
+
+.text-info{
+  margin: 10px 0px;
+}
+
+.text-info h1,
+h2 {
+    font-family: 'Sofia';
+}
+
+.formZipCode {
+  margin-top: 25px;
+  font-size: 25px;
+}
+
+.googleMaps {
+  margin-top: 10px;
+}
+
+.shopsData {
+  padding-left: 20px;
 }
 
 .panel-title:hover {
-  cursor: pointer;
+    cursor: pointer;
 }
 
-.memoPad{
-  background-image: url("../img/memoPad.jpg");
-  background-repeat: no-repeat;
+.memoPad {
+    background-image: url("../img/memoPad.jpg");
+    background-repeat: no-repeat;
 }
 
-.memoPad2{
-  margin-left: 20px;
-  padding-top: 5px;
+.memoPad2 {
+    margin-left: 20px;
+    padding-top: 5px;
 }
 
-.memoPad2 li{
-  list-style: none;
+.memoPad2 li {
+    list-style: none;
 }
+
 
 /* page orderShop drop check box list ---------------*/
-
-.checkbox label:after, 
+.checkbox label:after,
 .radio label:after {
     content: '';
     display: table;
@@ -83,8 +94,8 @@
     display: inline-block;
     border: 1px solid #a9a9a9;
     border-radius: .25em;
-	  width: 1.3em;
-	  height: 1.3em;
+    width: 1.3em;
+    height: 1.3em;
     float: left;
     margin-right: .5em;
 }
@@ -124,82 +135,85 @@
     opacity: 1;
 }
 
-/*.checkbox label input[type="checkbox"]:disabled + .cr,
+.checkbox label input[type="checkbox"]:disabled + .cr,
 .radio label input[type="radio"]:disabled + .cr {
     opacity: .5;
-}*/
-
+}
 /*---------------------------------------------------*/
 
+#getZipCode {
+    width: 120px;
+}
+
 #btn_SearchShops {
-  font-size: 1.5rem;
-  padding: 0.5rem 0.75rem;
-  display: block;
-  background-color: #009ac9;
-  border: 1px solid transparent;
-  color: #ffffff;
-  font-weight: 300;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
+    font-size: 1.5rem;
+    padding: 0.5rem 0.75rem;
+    display: block;
+    background-color: #009ac9;
+    border: 1px solid transparent;
+    color: #ffffff;
+    font-weight: 300;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
 #btn_SearchShops:hover {
-  background-color: #ffffff;
-	color: #009ac9;
-  border-color: #009ac9;
+    background-color: #ffffff;
+    color: #009ac9;
+    border-color: #009ac9;
 }
 
 #btn_SelectShop {
-  /*margin: 0 auto;*/
-  font-size: 1.5rem;
-  padding: 1rem 1rem;
-  display: block;
-  background-color: #009ac9;
-  border: 1px solid transparent;
-  color: #ffffff;
-  font-weight: 300;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
+    /*margin: 0 auto;*/
+    font-size: 1.5rem;
+    padding: 1rem 1rem;
+    display: block;
+    background-color: #009ac9;
+    border: 1px solid transparent;
+    color: #ffffff;
+    font-weight: 300;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
 #btn_SelectShop:hover {
-  background-color: #ffffff;
-	color: #009ac9;
-  border-color: #009ac9;
+    background-color: #ffffff;
+    color: #009ac9;
+    border-color: #009ac9;
 }
 
 #btn_ConfirmOrder {
-  /*margin: 0 auto;*/
-  font-size: 1.5rem;
-  padding: 1rem 1rem;
-  display: block;
-  background-color: #009ac9;
-  border: 1px solid transparent;
-  color: #ffffff;
-  font-weight: 300;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
+    /*margin: 0 auto;*/
+    font-size: 1.5rem;
+    padding: 1rem 1rem;
+    display: block;
+    background-color: #009ac9;
+    border: 1px solid transparent;
+    color: #ffffff;
+    font-weight: 300;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
 #btn_ConfirmOrder:hover {
-  background-color: #ffffff;
-	color: #009ac9;
-  border-color: #009ac9;
+    background-color: #ffffff;
+    color: #009ac9;
+    border-color: #009ac9;
 }
 
 #insQuantityOrder {
-	width: 3rem
+    width: 3rem
 }
 
 #insCommentsOrder {
-	width: : 0 auto;
+    width: : 0 auto;
 }

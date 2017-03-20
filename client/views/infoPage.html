@@ -1,23 +1,21 @@
 <div class="banner-section">
     <h1 class="text-center">Compras en tu barrio</h1>
 </div>
-<div class="layout-centered">
-    <img src="./img/originalLogo.jpg">
+<div class="text-info text-center">
     <h1>Ahorra tiempo en tus compras.</h1>
-    <p>ComBarrio te permite hacer encargos a las tiendas de tu barrio para que tu compra esté preparada a la hora que indiques.</p>
-    <p>ComBarrio envia, vía correo electrónico, tu lista de la compra al comercio de tu barrio que elijas.</p>
+    <h2>ComBarrio te permite hacer encargos a las tiendas de tu barrio para que tu compra esté preparada para que la pases a recoger a la hora que indiques.</h2>
+    <h2>ComBarrio envía tu lista de la compra al comercio de tu barrio que elijas vía correo electrónico.</h2>
 </div>
-<!-- <form action="" method="" class="form-inline" role="form" ng-submit="vm.searchZipCode($event)"> -->
-<form action="" method="" class="form-inline" role="form">
-    <div class="form-group">
-        <!-- <div class="input-group"> -->
+<div class="formZipCode">
+    <div class="form-inline">
         <label class="control-label" for="getZipCode">Selecciona un barrio</label>
-        <input id="getZipCode" name="zipCode" class="form-control" placeholder="dime el código postal de tu barrio" type="text" ng-model="zipCode">
-        <span class="pendingResolve">PENDIENTE ARREGLAR SI PULSAN INTRO</span>
+        <div class="input-group">
+            <input id="getZipCode" name="zipCode" class="form-control" placeholder="código postal" type="text" ng-model="zipCode">
+            <span class="input-group-btn">
+            <button id="btn_SearchShops" type="submit">
+                <a style="color: black" role="button" href="#!/shops/zipCode/{{zipCode}}">Buscar</a>
+            </button>
+        </span>
+        </div>
     </div>
-    <!-- <button id="btn_SearchShops"><a style="color: black" href="listShops.html">Buscar</a></button> -->
-    <button id="btn_SearchShops" type="submit">
-        <a style="color: black" role="button" href="#!/shops/zipCode/{{zipCode}}">Buscar</a>
-    </button>
-    <!-- </div> -->
-</form>
+</div>

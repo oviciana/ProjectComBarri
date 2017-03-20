@@ -1,1 +1,2 @@
-angular.module('comBarrioApp', ['ngRoute','ngResource','ui.bootstrap'])
+angular.module('comBarrioApp', ['ngRoute','ngResource','appServices','ngMap'])
+

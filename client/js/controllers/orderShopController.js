@@ -12,10 +12,7 @@
     var categories = []
     const idShop = $routeParams.id
 
-    $rootScope.selItems = {
-      name : "",
-      quantity : "",
-    }
+    $rootScope.selItems = {}
 
     comBarrioFactory.getShopProducts(idShop)
       .then(function (response) {

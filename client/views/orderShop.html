@@ -17,7 +17,7 @@
                             <div id="checkboxes" class="checkbox" ng-repeat="product in vm.shop.products">
                                 <div class="col-md-8">
                                     <label>
-                                        <input type="checkbox" ng-model="selItems.name[product.name]">
+                                        <input type="checkbox" ng-model="selItems[product.name]">
                                         <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>{{product.name}}
                                     </label>
                                 </div>
@@ -37,7 +37,7 @@
                 <p>Productos en tu pedido</p>
                 {{ selItems }}
                 <ul class="list-group" ng-repeat="item in selItems">
-                    <li>{{item.name}}</li>
+                    <li>{{item}}</li>
                 </ul>
             </div>
         </div>

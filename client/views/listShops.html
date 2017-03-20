@@ -1,34 +1,40 @@
 <div class="row">
-    <div class="col-md-6">
-        <div class="form-group">
-            <label class="control-label" for="getZipCode">Codi Postal</label>
-            <input id="getZipCode" name="ZipCode" class="form-control" type="text" value="{{ vm.zipCode }}" ng-model="vm.zipCode">
-            <button id="btn_SearchShops" type="submit">
-                <a style="color: black" role="button" href="#!/shops/zipCode/{{vm.zipCode}}">Buscar</a>
-            </button>
-            <label class="control-label" for="selectCategory">Fitra por tipo negocio</label>
-            <div class="">
-                <select id="selectCategory" name="selectCategory" class="form-control" ng-model="query">
-                    <option value="">-Todas-</option> -->
-                    <option value="Carnicería">Carnicerías</option>
-                    <option value="Frutería">Fruterías</option>
-                    <option value="Pescadería">Pescaderías</option>
-                    <option value="Peluquería">Peluquerías</option>
-                    <option value="Clínica Dental">Clínicas Dentales</option>
-                </select>
-                <span class="pendingResolve">FALTA HACER LA LISTA DINAMICA EN FUNCION DE LOS NEGOCIOS DEL BARRIO</span>
+    <div class="col-md-8">
+        <div class="row">
+            <div class="col-md-6 form-inline">
+                <label class="control-label" for="getZipCode">Codi Postal</label>
+                <div class="input-group">
+                    <input id="getZipCode" name="ZipCode" class="form-control" type="text" value="{{ vm.zipCode }}" ng-model="vm.zipCode">
+                    <span class="input-group-btn">
+                        <button id="btn_SearchShops" type="submit">
+                            <a style="color: black" role="button" href="#!/shops/zipCode/{{vm.zipCode}}">Buscar</a>
+                        </button>
+                    </span>
+                </div>
             </div>
-            <iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.uk/maps?f=q&source=s_q&hl=en&geocode=&q=15+Springfield+Way,+Hythe,+CT21+5SH&aq=t&sll=52.8382,-2.327815&sspn=8.047465,13.666992&ie=UTF8&hq=&hnear=Fruteria+Pistacho,+Hythe+CT21+5SH,+United+Kingdom&t=m&z=14&ll=51.077429,1.121722&output=embed"></iframe>
+            <div class="col-md-6 form-inline">
+                <label class="control-label" for="selectCategory">Filtra tipo negocio</label>
+                <select id="selectCategory" name="selectCategory" class="form-control" ng-model="query">
+                    <option value="">-Todos-</option>
+                    <option ng-repeat="bussiness in vm.typeBussines" value={{bussiness}}>{{ bussiness }}</option>
+                </select>
+            </div>
+        </div>
+        <div class="googleMaps">
+            <div id="map">
+                <ng-map id="main-map" center="41.3721731,2.1414897" zoom="12"></ng-map>
+            </div>
         </div>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-4">
         <div ng-repeat="shop in vm.shopsFound | filter:query | orderBy:name">
-            <h4>{{ shop.name }}</h4>
-            <h5>{{ shop.bussinessType }}</h5>
-            <h5>{{ shop.address.street }}</h5>
-            <h5>{{ shop.address.zipCode }} {{ shop.address.city }}</h5>
-            <h5>{{ shop.email }}</h5>
-            <button id="btn_SelectShop" type="button"><a style="color:black" href="#!/shop/{{shop._id}}">Seleccionar</a></button>
+            <button id="btn_SelectShop" type="button"><a style="color:black" href="#!/shop/{{shop._id}}">{{ shop.bussinessType }}  {{ shop.name }}  <i class="glyphicon glyphicon-chevron-right"></i></a></a>
+            </button>
+            <div class="shopsData">
+                <h5>{{ shop.address.street }}</h5>
+                <h5>{{ shop.address.zipCode }} {{ shop.address.city }}</h5>
+                <h5>{{ shop.email }}</h5>
+            </div>
         </div>
     </div>
 </div>
