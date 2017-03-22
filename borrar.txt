@@ -1,0 +1,34 @@
+58d1189126302107bd0381e6
+58d1189926302107bd0381e7
+58d118a126302107bd0381e8
+58d118aa26302107bd0381e9
+{ "_id" : ObjectId("58d1189126302107bd0381e6"), "name" : "Frutas Gonzalez", "bussinessType" : "Frutería", "address" : { "street" : "Carrer Rocafort,5", "zipCode" : "08015", "city" : "Barcelona", "coord" : [ 41.3754748, 2.1559903 ] }, "email" : "shop.order.demo@gmail.com", "openHours" : "09:00-14:00 y 17:00-20:00", "acceptOrders" : "Encargos 3 horas antes de la hora de recogida", "idShopProducts" : "" }
+{ "_id" : ObjectId("58d1189926302107bd0381e7"), "name" : "SucFrutas", "bussinessType" : "Frutería", "address" : { "street" : "Carrer Entença,100", "zipCode" : "08015", "city" : "Barcelona", "coord" : [ 41.3804432, 2.1499313 ] }, "email" : "shop.order.demo@gmail.com", "openHours" : "09:00-14:00 y 17:00-20:00", "acceptOrders" : "Encargos 3 horas antes de la hora de recogida", "idShopProducts" : "" }
+{ "_id" : ObjectId("58d118a126302107bd0381e8"), "name" : "Pomes i més", "bussinessType" : "Frutería", "address" : { "street" : "Carrer Vallespir,44", "zipCode" : "08014", "city" : "Barcelona", "coord" : [ 41.3790127, 2.138385 ] }, "email" : "shop.order.demo@gmail.com", "openHours" : "09:00-14:00 y 17:00-20:00", "acceptOrders" : "Encargos 3 horas antes de la hora de recogida", "idShopProducts" : "" }
+{ "_id" : ObjectId("58d118aa26302107bd0381e9"), "name" : "Tus frutas", "bussinessType" : "Frutería", "address" : { "street" : "Carrer Premià,20", "zipCode" : "08014", "city" : "Barcelona", "coord" : [ 41.3766298, 2.1388356 ] }, "email" : "shop.order.demo@gmail.com", "openHours" : "09:00-14:00 y 17:00-20:00", "acceptOrders" : "Encargos 3 horas antes de la hora de recogida", "idShopProducts" : "" }
+
+
+{ "_id" : ObjectId("58d118b226302107bd0381ea"), "name" : "CarniFresh", "bussinessType" : "Carnicería", "address" : { "street" : "Carrer València,34", "zipCode" : "08015", "city" : "Barcelona", "coord" : [ 41.3799884, 2.1482308 ] }, "email" : "shop.order.demo@gmail.com", "openHours" : "09:00-14:00 y 17:00-20:00", "acceptOrders" : "Encargos 3 horas antes de la hora de recogida", "idShopProducts" : "" }
+{ "_id" : ObjectId("58d118b926302107bd0381eb"), "name" : "Carnica González", "bussinessType" : "Carnicería", "address" : { "street" : "Carrer Moianès,53", "zipCode" : "08014", "city" : "Barcelona", "coord" : [ 41.3732661, 2.1402296 ] }, "email" : "shop.order.demo@gmail.com", "openHours" : "09:00-14:00 y 17:00-20:00", "acceptOrders" : "Encargos 3 horas antes de la hora de recogida", "idShopProducts" : "" }
+{ "_id" : ObjectId("58d118c026302107bd0381ec"), "name" : "El Carnivoro", "bussinessType" : "Carnicería", "address" : { "street" : "Carrer Berlín,9", "zipCode" : "08014", "city" : "Barcelona", "coord" : [ 41.3826353, 2.1370653 ] }, "email" : "shop.order.demo@gmail.com", "openHours" : "09:00-14:00 y 17:00-20:00", "acceptOrders" : "Encargos 3 horas antes de la hora de recogida", "idShopProducts" : "" }
+{ "_id" : ObjectId("58d1196526302107bd0381f1"), "name" : "Los charcuteros", "bussinessType" : "Carnicería", "address" : { "street" : "Carrer Diputació,63", "zipCode" : "08015", "city" : "Barcelona", "coord" : [ 41.3795465, 2.1508886 ] }, "email" : "shop.order.demo@gmail.com", "openHours" : "09:00-14:00 y 17:00-20:00", "acceptOrders" : "Encargos 3 horas antes de la hora de recogida", "idShopProducts" : "" }
+
+
+{ "_id" : ObjectId("58d118cd26302107bd0381ed"), "name" : "DelMar", "bussinessType" : "Pescadería", "address" : { "street" : "Carrer Olzinelles,78", "zipCode" : "08014", "city" : "Barcelona", "coord" : [ 41.3716022, 2.1378148 ] }, "email" : "shop.order.demo@gmail.com", "openHours" : "09:00-14:00 y 17:00-20:00", "acceptOrders" : "Encargos 3 horas antes de la hora de recogida", "idShopProducts" : "" }
+{ "_id" : ObjectId("58d118d426302107bd0381ee"), "name" : "VivoColeando", "bussinessType" : "Pescadería", "address" : { "street" : "carrer Farell,10", "zipCode" : "08014", "city" : "Barcelona", "coord" : [ 41.3732605, 2.1431915 ] }, "email" : "shop.order.demo@gmail.com", "openHours" : "09:00-14:00 y 17:00-20:00", "acceptOrders" : "Encargos 3 horas antes de la hora de recogida", "idShopProducts" : "" }
+{ "_id" : ObjectId("58d118da26302107bd0381ef"), "name" : "El Pescaito", "bussinessType" : "Pescadería", "address" : { "street" : "Carrer Viladomat,89", "zipCode" : "08015", "city" : "Barcelona", "coord" : [ 41.3797799, 2.1527983 ] }, "email" : "shop.order.demo@gmail.com", "openHours" : "09:00-14:00 y 17:00-20:00", "acceptOrders" : "Encargos 3 horas antes de la hora de recogida", "idShopProducts" : "" }
+{ "_id" : ObjectId("58d1192926302107bd0381f0"), "name" : "Abisal", "bussinessType" : "Pescadería", "address" : { "street" : "Carrer Comte Borrell,88", "zipCode" : "08015", "city" : "Barcelona", "coord" : [ 41.3807379, 2.1554591 ] }, "email" : "shop.order.demo@gmail.com", "openHours" : "09:00-14:00 y 17:00-20:00", "acceptOrders" : "Encargos 3 horas antes de la hora de recogida", "idShopProducts" : "" }
+
+>
+
+
+
+
+
+
+
+
+
+
+
+

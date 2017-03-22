@@ -14,7 +14,7 @@
             </div>
             <div class="col-md-6 form-inline">
                 <label class="control-label" for="selectCategory">Filtra tipo negocio</label>
-                <select id="selectCategory" name="selectCategory" class="form-control" ng-model="query">
+                <select id="selectCategory" name="selectCategory" class="form-control" ng-change="vm.filterMap()" ng-model="vm.query">
                     <option value="">-Todos-</option>
                     <option ng-repeat="bussiness in vm.typeBussines" value={{bussiness}}>{{ bussiness }}</option>
                 </select>
@@ -27,7 +27,7 @@
         </div>
     </div>
     <div class="col-md-4">
-        <div ng-repeat="shop in vm.shopsFound | filter:query | orderBy:name">
+        <div ng-repeat="shop in vm.shopsFound | filter:vm.query | orderBy:'bussinessType'">
             <button id="btn_SelectShop" type="button"><a style="color:black" href="#!/shop/{{shop._id}}">{{ shop.bussinessType }}  {{ shop.name }}  <i class="glyphicon glyphicon-chevron-right"></i></a></a>
             </button>
             <div class="shopsData">

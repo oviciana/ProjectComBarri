@@ -1,28 +1,55 @@
-(function () {
-  angular
-  .module('comBarrioApp')
-    .controller('orderShopController', [
-      '$rootScope',
-      '$routeParams',
-      'comBarrioFactory',
-      ProductsShopController
-    ])
-  function ProductsShopController ($rootScope, $routeParams, comBarrioFactory) {
-    var vm = this
-    var categories = []
-    const idShop = $routeParams.id
+(function() {
+    angular
+        .module('comBarrioApp')
+        .controller('orderShopController', [
+            '$scope',
+            '$rootScope',
+            '$routeParams',
+            'comBarrioFactory',
+            ProductsShopController
+        ])
 
-    $rootScope.selItems = {}
+    function ProductsShopController($scope, $rootScope, $routeParams, comBarrioFactory) {
+        let vm = this
+        let categories = []
+        const idShop = $routeParams.id
+        let listItems = []
 
-    comBarrioFactory.getShopProducts(idShop)
-      .then(function (response) {
-        vm.shop = response
-        for (var i in response.products ){
-          if (categories.indexOf(response.products[i].category) < 0 ) {
-            categories.push(response.products[i].category)
-          }
+        comBarrioFactory.getShopProducts(idShop)
+            .then(function(response) {
+                vm.shop = response
+                for (let i in response.idShopProducts.products) {
+                    if (categories.indexOf(response.idShopProducts.products[i].category) < 0) {
+                        categories.push(response.idShopProducts.products[i].category)
+                    }
+                }
+                vm.categories = categories
+            })
+
+        vm.accordion = {
+            current: null
         }
-        vm.categories = categories
-      })
-  }
+
+        vm.readItems = () => {
+            for (let product in vm.selItems) {
+                let insText = vm.selItems[product] + " " + product
+                let findpos = false
+                for (pos = listItems.length - 1; pos >= 0; pos--) {
+                    if (listItems[pos].search(product) > 0) {
+                        if (vm.selItems[product] == 0) {
+                            listItems.splice(pos,1)
+                        } else {
+                            listItems[pos] = insText
+                        }
+                        findpos = true
+                    }
+                }
+                if (!findpos && vm.selItems[product] > 0 ) {
+                    listItems.push(insText)
+                }
+            }
+            vm.listItems = listItems
+        }
+      
+    }
 })()

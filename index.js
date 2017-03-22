@@ -3,8 +3,10 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 // const users = require('./server/models/users.js')
+
+const shopProducts = require('./server/models/shopProducts.js')
 const shops = require('./server/models/shops.js')
-// const shopProducts = require('./server/models/shopProducts.js')
+console.log(shopProducts)
 // const userOrders = require('./server/models/userOrders.js')
 const PORT = process.env.PORT || 3010
 const urlDB = process.env.DB_URI || 'mongodb://localhost:27017/combarrio'
@@ -38,9 +40,11 @@ app.get('/shops/bussinessType/:bussinessType', (req,res) => {
 
 app.get('/shop/:id', (req,res) => {
 	const { id } = req.params
-	shops.findById( id )
-    .then( shopFind => res.status(200).json(shopFind) )
-    .catch( errShopFind => res.status(500).json(errShopFind).send(`Shop not found`) )
+	shops.findById( id , (error, shop) => {
+		shopProducts.populate(shop, {path: "idShopProducts"})	
+    	.then( shopFind => res.status(200).json(shopFind) )
+    	.catch( errShopFind => res.status(500).json(errShopFind).send(`Shop not found`) )
+  })
 })
 
 app.get('/shops/:zipCode/:bussinessType', (req,res) => {

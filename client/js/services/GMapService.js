@@ -1,56 +1,49 @@
 angular.module('appServices')
 	.factory("GMapService", function( $rootScope, NgMap ) {
 
-		// function cleanMarkers(  ) {
-		// 	if ($rootScope.markers && $rootScope.markers.length) {
-		// 		$rootScope.markers.forEach( marker => marker.setMap(null) )
-		// 	}
-		// 	else {
-		// 		$rootScope.markers = [];
-		// 	}
-		// }
-
-		// function createMarker( map, rest, customOptions = {} ) {
-
-		// 	const [ lng, lat ] = rest.address.coord;
-		// 	const myLatLng = { lat, lng };
-		// 	let defaultOptions = {
-		// 		position: myLatLng,
-		// 		map: map,
-		// 		title: 'Hello World!'
-		// 	};
-
-		// 	const options = _.extend( defaultOptions, customOptions)
-
-		// 	const marker = new google.maps.Marker(options);
-
-		// 	const infowindow = new google.maps.InfoWindow({
-		//     content: `<h3><a href="#/details/${rest._id}">${ rest.name }</h3><p>${ rest.borough } | ${ rest.cuisine }</p><p>${ rest.address.zipcode }</p>`
-		//   });
-
-		//   marker.addListener('click', function() {
-		//     infowindow.open(map, marker);
-		//   });
-
-		//   return marker;
-
-		// }
+		function getMarkers() {
+		 	cleanMarkers();
+		 	return NgMap.getMap({ id: 'main-map' }).then( showMarkers )
+		}
 
 		function showMarkers(map){
-
 			let bounds = new google.maps.LatLngBounds()
-
-		// 	$rootScope.restaurants.forEach( rest => {
-
-		// 		const marker = createMarker( map, rest );
-		// 		$rootScope.markers.push(marker)
-		// 		bounds.extend(marker.position);
-
-		// 	})
-
-		// 	map.fitBounds( bounds );
-
+		 	$rootScope.shopsFound.forEach( shop => {
+		 		const marker = createMarker( map, shop );
+		 		$rootScope.markers.push(marker)
+		 		bounds.extend(marker.position)
+			})
+			map.fitBounds( bounds )
 		}
+
+		function cleanMarkers() {
+			if ($rootScope.markers && $rootScope.markers.length) {
+				$rootScope.markers.forEach( marker => marker.setMap(null) )
+			}
+			else {
+				$rootScope.markers = []
+			}
+		}
+
+		function createMarker( map, shop ) {
+		 	const [ lat, lng ] = shop.address.coord;
+		 	const myLatLng = { lat, lng };
+		 	let defaultOptions = {
+				position: myLatLng,
+		 		map: map,
+		 		title: ''	 	
+		 	};
+		 	const marker = new google.maps.Marker(defaultOptions);
+			const infowindow = new google.maps.InfoWindow({
+			  content: `<h5><a href="#!/shop/${shop._id}">${ shop.name }</h5><p>${ shop.bussinessType }</p>` 
+		  });
+		  marker.addListener('click', function() {
+		    infowindow.open(map, marker);
+		  });
+		  return marker;
+		}
+
+	
 
 		// function getDetailsMarker(idMap, rest ){
 
@@ -83,10 +76,7 @@ angular.module('appServices')
 
 		// }
 
-		function getMarkers() {
-//		 	cleanMarkers();
-		 	return NgMap.getMap({ id: 'main-map' }).then( showMarkers )
-		}
+		
 
 		// $rootScope.setCenter = function( coords ) {
 

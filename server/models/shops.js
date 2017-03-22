@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 const collection = 'shops'
+var ShopProducts = mongoose.model('ShopProducts');
+const Schema = mongoose.Schema
 
 var ShopSchema = new mongoose.Schema({
 	name: String,
@@ -11,15 +13,9 @@ var ShopSchema = new mongoose.Schema({
 		coord  : [Number],
 	},
 	email: String,
-	products: [{
-    category: String,
-    name    : String,
-    price   : Number,
-    currency: String,
-    unit    : String,
-    photoURL: String,
-  }],
-
+	openHours: String,
+	acceptOrders: String,
+	idShopProducts: { type: Schema.ObjectId, ref: "ShopProducts"},
 }, { collection })
 
-module.exports = mongoose.model('Shop', ShopSchema);
+module.exports = mongoose.model('Shops', ShopSchema);

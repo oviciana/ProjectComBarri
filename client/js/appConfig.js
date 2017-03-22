@@ -5,9 +5,7 @@
   function routerConfig ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/infoPage.html',
-//        controller: 'infoController',
-//        controllerAs: 'vm'        
+        templateUrl: 'views/infoPage.html',      
       })
 
       .when('/shops/zipCode/:zipCode', {

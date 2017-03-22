@@ -1,12 +1,14 @@
 const mongoose = require('mongoose');
 const collection = 'user_orders'
 
-const UserOrderSchema = new mongoose.Schema({
+const UserOrdersSchema = new mongoose.Schema({
 	idUser: String,
 	idShop: String,
-	product: String,
-	quantity: Number,
-	preparation: String
+	products: [{
+		name: String,
+		quantity: Number,
+	}],
+	preparation: String,
 }, { collection })
 
-module.exports = mongoose.model('UserOrder', UserOrderSchema);
+module.exports = mongoose.model('UserOrders', UserOrdersSchema);

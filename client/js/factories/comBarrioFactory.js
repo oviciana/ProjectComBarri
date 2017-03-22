@@ -12,7 +12,7 @@
             return error
           })
       }
-
+              
       function getShopProducts(idShop){
         var url = constApp.urlMain + '/shop/' + idShop
         return $http.get(url)
@@ -26,7 +26,6 @@
       return {
         getShopsZipCode: getShopsZipCode,
         getShopProducts: getShopProducts,
-
       }
     })
 })()
