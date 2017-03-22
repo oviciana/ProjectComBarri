@@ -1,21 +1,20 @@
 <div class="banner-section">
-    <h1 class="text-center">Compras en tu barrio</h1>
-</div>
-<div class="text-info text-center">
-    <h1>Ahorra tiempo en tus compras.</h1>
-    <h2>ComBarrio te permite hacer encargos a las tiendas de tu barrio para que tu compra esté preparada para que la pases a recoger a la hora que indiques.</h2>
-    <h2>ComBarrio envía tu lista de la compra al comercio de tu barrio que elijas vía correo electrónico.</h2>
-</div>
-<div class="formZipCode">
-    <div class="form-inline">
-        <label class="control-label" for="getZipCode">Selecciona un barrio</label>
-        <div class="input-group">
-            <input id="getZipCode" name="zipCode" class="form-control" placeholder="código postal" type="text" ng-model="zipCode">
-            <span class="input-group-btn">
-            <button id="btn_SearchShops" type="submit">
-                <a style="color: black" role="button" href="#!/shops/zipCode/{{zipCode}}">Buscar</a>
-            </button>
-        </span>
+    <div class="mainHead">
+        <h1 class="mainTitle text-center">Compras en tu barrio</h1>
+        <div class="formZipCode">
+            <div class="input-group">
+                <input class="firstZipCode form-control" id="getZipCode" name="zipCode" placeholder="Dime un código postal" ng-model="zipCode">
+                <div class="input-group-btn">
+                    <button class="btn_SearchShops" id="btn_SearchShops" type="submit">
+                        <a style="color: black" role="button" href="#!/shops/zipCode/{{zipCode}}">Buscar</a>
+                    </button>
+                </div>
+            </div>
         </div>
+    </div>
+    <div class="text-info text-center">
+        <h1>Ahorra tiempo en tus compras.</h1>
+        <h2>ComBarrio te permite hacer encargos a las tiendas de tu barrio para que tu compra esté preparada para que la pases a recoger a la hora que indiques.</h2>
+        <h2>ComBarrio envía tu lista de la compra al comercio de tu barrio que elijas vía correo electrónico.</h2>
     </div>
 </div>

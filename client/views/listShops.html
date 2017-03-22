@@ -1,39 +1,41 @@
-<div class="row">
-    <div class="col-md-8">
-        <div class="row">
-            <div class="col-md-6 form-inline">
-                <label class="control-label" for="getZipCode">Codi Postal</label>
-                <div class="input-group">
-                    <input id="getZipCode" name="ZipCode" class="form-control" type="text" value="{{ vm.zipCode }}" ng-model="vm.zipCode">
-                    <span class="input-group-btn">
-                        <button id="btn_SearchShops" type="submit">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="row">
+                <div class="col-md-6 form-inline">
+                    <label class="control-label" for="getZipCode">Codi Postal</label>
+                    <div class="input-group">
+                        <input class="getZipCode" id="getZipCode" name="ZipCode" class="form-control" type="text" value="{{ vm.zipCode }}" ng-model="vm.zipCode">
+                        <span class="input-group-btn">
+                        <button class="btn_SearchShops" id="btn_SearchShops" type="submit">
                             <a style="color: black" role="button" href="#!/shops/zipCode/{{vm.zipCode}}">Buscar</a>
                         </button>
                     </span>
+                    </div>
+                </div>
+                <div class="col-md-6 form-inline">
+                    <label class="control-label" for="selectCategory">Filtra tipo negocio</label>
+                    <select id="selectCategory" name="selectCategory" class="form-control" ng-change="vm.filterMap()" ng-model="vm.query">
+                        <option value="">-Todos-</option>
+                        <option ng-repeat="bussiness in vm.typeBussines" value={{bussiness}}>{{ bussiness }}</option>
+                    </select>
                 </div>
             </div>
-            <div class="col-md-6 form-inline">
-                <label class="control-label" for="selectCategory">Filtra tipo negocio</label>
-                <select id="selectCategory" name="selectCategory" class="form-control" ng-change="vm.filterMap()" ng-model="vm.query">
-                    <option value="">-Todos-</option>
-                    <option ng-repeat="bussiness in vm.typeBussines" value={{bussiness}}>{{ bussiness }}</option>
-                </select>
+            <div class="googleMaps">
+                <div id="map">
+                    <ng-map id="main-map" center="41.3721731,2.1414897" zoom="12"></ng-map>
+                </div>
             </div>
         </div>
-        <div class="googleMaps">
-            <div id="map">
-                <ng-map id="main-map" center="41.3721731,2.1414897" zoom="12"></ng-map>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div ng-repeat="shop in vm.shopsFound | filter:vm.query | orderBy:'bussinessType'">
-            <button id="btn_SelectShop" type="button"><a style="color:black" href="#!/shop/{{shop._id}}">{{ shop.bussinessType }}  {{ shop.name }}  <i class="glyphicon glyphicon-chevron-right"></i></a></a>
-            </button>
-            <div class="shopsData">
-                <h5>{{ shop.address.street }}</h5>
-                <h5>{{ shop.address.zipCode }} {{ shop.address.city }}</h5>
-                <h5>{{ shop.email }}</h5>
+        <div class="col-md-4">
+            <div ng-repeat="shop in vm.shopsFound | filter:vm.query | orderBy:'bussinessType'">
+                <button class="btn_SelectShop" id="btn_SelectShop" type="button"><a style="color:black" href="#!/shop/{{shop._id}}">{{ shop.bussinessType }}  {{ shop.name }}  <i class="glyphicon glyphicon-chevron-right"></i></a></a>
+                </button>
+                <div class="shopsData">
+                    <h5>{{ shop.address.street }}</h5>
+                    <h5>{{ shop.address.zipCode }} {{ shop.address.city }}</h5>
+                    <h5>{{ shop.email }}</h5>
+                </div>
             </div>
         </div>
     </div>

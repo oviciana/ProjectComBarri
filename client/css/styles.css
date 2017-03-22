@@ -1,10 +1,17 @@
 /* design all the boxes (developing)---------------- */
-/** {
+
+
+/*
+* {
     border: 1px solid black;
     padding: 0px;
 }
 */
+
+
 /* blink efect (developing)--------------------------*/
+
+
 /*.pendingResolve {
     animation: blinker 3s linear infinite;
     color: red;
@@ -15,7 +22,10 @@
         opacity: 0;
     }
 }*/
+
+
 /*---------------------------------------------------*/
+
 .navbar {
     margin-top: 5px;
     margin-bottom: 5px;
@@ -28,24 +38,40 @@
 
 .banner-section {
     background-image: url("../img/barri.jpg");
-    height: 180px;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .banner-section h1 {
     font-family: 'Sofia';
+    margin: 0px;
+    margin-bottom: 30px;
+}
+
+.mainHead {
+    padding: 60px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mainTitle {
     font-size: 60px;
     color: white;
-    margin: 0px;
-    padding: 50px;
 }
 
-.text-info{
-  margin: 10px 0px;
-}
-
-.text-info h1,
-h2 {
+.text-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     font-family: 'Sofia';
+    font-size: 25px;
+    background-color: black;
+    opacity: 0.6;
+    padding: 10px;
+    color: white;
 }
 
 .information {
@@ -53,37 +79,48 @@ h2 {
 }
 
 .formZipCode {
-  margin-top: 25px;
-  font-size: 25px;
+    font-size: 25px;
+    width: 250px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.getZipCode {
+    width: 80px;
+    height: 33px;
+    font-size: 15px;
 }
 
 .googleMaps {
-  margin-top: 10px;
+    margin-top: 10px;
+    height: 400px;
 }
 
 .shopsData {
-  padding-left: 20px;
+    padding-left: 20px;
 }
 
 .panel {
     margin: 0px;
     border: 0px;
     padding-left: 0px;
-    
 }
 
 .panel-default {
     margin: 0px;
     border: 0px;
- 
 }
 
 .panel-heading:hover {
     cursor: pointer;
 }
 
-.list-group{
+.list-group {
     margin-bottom: 0px;
+    list-style: none;
 }
 
 .memoPad {
@@ -101,15 +138,38 @@ h2 {
 }
 
 .selectProducts {
+    height: 90px;
+    padding: 0px;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    /*   align-content: space-around;*/
+    align-items: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
 }
 
-#getZipCode {
-    width: 120px;
+.productBuyText {
+    background-color: white;
+    opacity: 0.7;
+    display: flex;
+    align-items: center;
 }
 
-#btn_SearchShops {
+.productBuyText h4 {
+    color: black;
+    margin: 0px;
+    opacity: 1;
+    display: flex;
+    align-items: center;
+}
+
+.productBuyQuantity {
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.btn_SearchShops {
     font-size: 1.5rem;
     padding: 0.5rem 0.75rem;
     display: block;
@@ -124,13 +184,13 @@ h2 {
     transition: all 0.3s ease-in-out;
 }
 
-#btn_SearchShops:hover {
+.btn_SearchShops:hover {
     background-color: #ffffff;
     color: #009ac9;
     border-color: #009ac9;
 }
 
-#btn_SelectShop {
+.btn_SelectShop {
     /*margin: 0 auto;*/
     font-size: 1.5rem;
     padding: 1rem 1rem;
@@ -146,13 +206,13 @@ h2 {
     transition: all 0.3s ease-in-out;
 }
 
-#btn_SelectShop:hover {
+.btn_SelectShop:hover {
     background-color: #ffffff;
     color: #009ac9;
     border-color: #009ac9;
 }
 
-#btn_ConfirmOrder {
+.btn_ConfirmOrder {
     /*margin: 0 auto;*/
     font-size: 1.5rem;
     padding: 1rem 1rem;
@@ -168,17 +228,17 @@ h2 {
     transition: all 0.3s ease-in-out;
 }
 
-#btn_ConfirmOrder:hover {
+.btn_ConfirmOrder:hover {
     background-color: #ffffff;
     color: #009ac9;
     border-color: #009ac9;
 }
 
-#insQuantityOrder {
+.insQuantityOrder {
     width: 4rem
 }
 
-#insCommentsOrder {
+.insCommentsOrder {
     width: : 0 auto;
 }
 

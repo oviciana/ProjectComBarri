@@ -23,11 +23,11 @@
         <div ng-include src="'views/navbar.html'"></div>
     </header>
     <main>
-        <div class="container">
-            <ng-view autoscroll="true"></ng-view>
-        </div>
+        <ng-view autoscroll="true"></ng-view>
     </main>
-    <footer></footer>
+    <footer>
+        <div ng-include src="'views/navbar.html'"></div>
+    </footer>
     <script src="js/appModule.js"></script>
     <script src="js/appConfig.js"></script>
     <script src="js/appConstants.js"></script>

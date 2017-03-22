@@ -14,6 +14,7 @@
         let categories = []
         const idShop = $routeParams.id
         let listItems = []
+        vm.required = true
 
         comBarrioFactory.getShopProducts(idShop)
             .then(function(response) {
