@@ -26,6 +26,13 @@
 
 /*---------------------------------------------------*/
 
+hr {
+    background-color: grey;
+    height: 2px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
 .navbar {
     margin-top: 5px;
     margin-bottom: 5px;
@@ -43,7 +50,6 @@
 }
 
 .banner-section h1 {
-    font-family: 'Sofia';
     margin: 0px;
     margin-bottom: 30px;
 }
@@ -57,6 +63,7 @@
 }
 
 .mainTitle {
+    font-family: 'Sofia';
     font-size: 60px;
     color: white;
 }
@@ -74,11 +81,8 @@
     color: white;
 }
 
-.information {
-    font-size: 14px;
-}
-
 .formZipCode {
+    font-family: 'Sofia';
     font-size: 25px;
     width: 250px;
     background-color: white;
@@ -88,15 +92,25 @@
     align-items: center;
 }
 
+.firstZipCode {
+    height: 40px;
+    font-family: 'Sofia';
+    font-size: 20px;
+}
+
 .getZipCode {
     width: 80px;
     height: 33px;
     font-size: 15px;
 }
 
+.showMap {
+    margin-bottom: 20px;
+}
+
 .googleMaps {
     margin-top: 10px;
-    height: 400px;
+    height: 450px;
 }
 
 .shopsData {
@@ -134,7 +148,7 @@
 
 .memoPadBody li {
     list-style: none;
-    padding-left: 20px;
+    padding-left: 30px;
 }
 
 .selectProducts {
@@ -149,14 +163,14 @@
 }
 
 .productBuyText {
-    background-color: white;
+    background-color: black;
     opacity: 0.7;
     display: flex;
     align-items: center;
 }
 
 .productBuyText h4 {
-    color: black;
+    color: white;
     margin: 0px;
     opacity: 1;
     display: flex;
@@ -167,6 +181,27 @@
     display: flex;
     align-items: center;
     margin-top: 40px;
+}
+
+.btn_FirstSearchShops {
+    font-size: 2rem;
+    padding: 0.5rem 0.75rem;
+    display: block;
+    background-color: #009ac9;
+    border: 1px solid transparent;
+    color: #ffffff;
+    font-weight: 300;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn_FirstSearchShops:hover {
+    background-color: #ffffff;
+    color: #009ac9;
+    border-color: #009ac9;
 }
 
 .btn_SearchShops {
@@ -240,6 +275,35 @@
 
 .insCommentsOrder {
     width: : 0 auto;
+}
+
+.nav-footer{
+    margin-top: 20px;
+}
+
+.copyright {
+    min-height: 40px;
+    background-color: black;
+}
+
+.copyright p {
+    text-align: left;
+    color: white;
+    padding: 10px 0;
+    margin-bottom: 0px;
+}
+
+.bottom_ul {
+    list-style-type: none;
+    float: right;
+    margin-bottom: 0px;
+}
+
+.bottom_ul li {
+    float: left;
+    line-height: 40px;
+    color: white;
+    font-size: 12px;
 }
 
 #accordion {

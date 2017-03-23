@@ -3,6 +3,7 @@
   .config(['$routeProvider',routerConfig])
 
   function routerConfig ($routeProvider) {
+
     $routeProvider
       .when('/', {
         templateUrl: 'views/infoPage.html',      
@@ -19,7 +20,15 @@
         controller: 'orderShopController',
         controllerAs: 'vm'
       })
-      
-      .otherwise('/')
+
+//       .when('/sendMail', {
+// //        templateUrl: 'views/sendMailModal.html',
+//         controller: 'sendMailController',
+//         controllerAs: 'vm',
+//       })
+     
+      .otherwise({
+        redirectTo: '/'
+      });
   }
 })()

@@ -3,10 +3,10 @@
         <h1 class="mainTitle text-center">Compras en tu barrio</h1>
         <div class="formZipCode">
             <div class="input-group">
-                <input class="firstZipCode form-control" id="getZipCode" name="zipCode" placeholder="Dime un código postal" ng-model="zipCode">
+                <input class="firstZipCode form-control" autocomplete="off" id="getZipCode" name="zipCode" placeholder="Código postal" ng-model="zipCode">
                 <div class="input-group-btn">
-                    <button class="btn_SearchShops" id="btn_SearchShops" type="submit">
-                        <a style="color: black" role="button" href="#!/shops/zipCode/{{zipCode}}">Buscar</a>
+                    <button class="btn_FirstSearchShops" id="btn_SearchShops" type="submit">
+                        <a style="text-decoration: none; color: black;" role="button" href="#!/shops/zipCode/{{zipCode}}">Buscar</a>
                     </button>
                 </div>
             </div>

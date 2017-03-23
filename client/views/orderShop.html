@@ -29,7 +29,8 @@
                 <label>Comentarios a tu pedido</label>
                 <textarea class="insCommentsOrdere form-control" rows="3" placeholder="indica preparación, hora de recogida o cualquier otra nota relevante" ng-model="vm.prepareOrder"></textarea>
             </div>
-            <button class="btn_ConfirmOrder" id="btn_ConfirmOrder" data-toggle="modal" data-target="#sendOrder" id="launch">Confirmar pedido</button>
+            <button class="btn_ConfirmOrder" id="btn_ConfirmOrder" data-toggle="modal" data-target="#sendOrder" id="launch">Confirmar Pedido</button>
+            <!-- <button class="btn_ConfirmOrder" id="btn_ConfirmOrder" data-toggle="modal" data-target="#sendOrder" id="launch"><a style="color: black" href="#!/sendMail">Confirmar Pedido</a></button> -->
             <!-- <button id="btn_ConfirmOrder"><a style="color: black" href="sendMail.html">Confirmar Pedido</a></button>-->
         </div>
     </div>
@@ -45,42 +46,39 @@
         <div class="memoPadFoot">
         </div>
     </div>
-    <!-- Modal -->
-    <div class="modal fade" id="sendOrder" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header modal-title">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4><strong>{{ vm.shop.name }}</strong></h4>
-                    <h5>{{ vm.shop.address.street }} {{ vm.shop.address.zipCode }} {{ vm.shop.address.city }}</h5>
-                    <h5>{{ vm.shop.email }}</h5>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="sendOrder" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header modal-title">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4><strong>{{ vm.shop.name }}</strong></h4>
+                <h5>{{ vm.shop.address.street }} {{ vm.shop.address.zipCode }} {{ vm.shop.address.city }}</h5>
+                <h5>{{ vm.shop.email }}</h5>
+            </div>
+            <div class="modal-header">
+                <h4><strong>Tu lista de la compra</strong></h4>
+                <ul class="list-group" ng-repeat="item in vm.listItems">
+                    <li>{{item}}</li>
+                </ul>
+                <h5>{{ vm.prepareOrder }}</h5>
+            </div>
+            <div class="modal-body">
+                <h4>Estos datos se unirán a tu lista de pedido</h4>
+                <div class="form-group">
+                    <label for="userNameOrder" class="control-label">Nombre</label>
+                    <input class="userNameOrder form-control" id="userNameOrder" type="string" ng-model="vm.nameUserOrder">
                 </div>
-                <div class="modal-header">
-                    <h4><strong>Tu lista de la compra</strong></h4>
-                    <ul class="list-group" ng-repeat="item in vm.listItems">
-                        <li>{{item}}</li>
-                    </ul>
-                    <h5>{{ vm.prepareOrder }}</h5>
-                </div>
-                <div class="modal-body">
-                    <h4>Estos datos se unirán a tu lista de pedido</h4>
-                    <div class="form-group">
-                        <label for="userNameOrder" class="control-label">Nombre</label>
-                        <input class="userNameOrder form-control" id="userNameOrder" type="string" ng-model="vm.nameUserOrder">
-                    </div>
-                    <div class="form-group">
-                        <label for="userMailOrder" class="control-label">Correo Electrónico</label>
-                        <input class="userMailOrder form-control" id="userMailOrder" type="string" ng-model="vm.nameUserMail" ng-required="vm.required">
-                    </div>
-                    <div class="form-group">
-                        <label for="userPhoneOrder" class="control-label">Teléfono Contacto</label>
-                        <input class="userPhoneOrder form-control" id="userPhoneOrder type=" string " ng-model="vm.nameUserPhone ">
+                <div class="form-group">
+                    <label for="userMailOrder" class="control-label">Correo Electrónico</label>
+                    <input class="userMailOrder form-control" id="userMailOrder" type="string" ng-model="vm.nameUserMail" ng-change="vm.getUserMail()">
                 </div>
             </div>
-            <div class="modal-footer ">
-                <form class="sendMail ">
-                    <button id="btnCancelOrder " type="button " class="btn btn-default " data-dismiss="modal " aria-label="Close ">Cancelar</button>
-                    <button id="btnSendOrder " type="submit " class="btn btn-primary ">Enviar Correo</button>
+            <div class="modal-footer">
+                <form class="sendMail">
+                    <button id="btnCancelOrder" type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close">Cancelar</button>
+                    <button id="btnSendOrder" type="submit" class="btn btn-primary ng-hide" ng-click="vm.sendMail($event)" onclick="$('.modal').modal('hide')" ng-show="vm.mostrarBtnEnvio">Enviar Correo</button>
                 </form>
             </div>
         </div>

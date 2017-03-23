@@ -23,9 +23,19 @@
           })
       }
 
+      function sendMailOrder(shopName,shopEmail,listOrder,userName,userMail,userPhone){
+        var url = constApp.urlMain + '/sendMail'
+        var data = {shopName,shopEmail,listOrder,userName,userMail,userPhone}
+        return $http.post(url,data)
+        .then(
+          console.log("send a email")
+        )
+      }
+
       return {
         getShopsZipCode: getShopsZipCode,
         getShopProducts: getShopProducts,
+        sendMailOrder: sendMailOrder,
       }
     })
 })()
