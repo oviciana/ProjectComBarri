@@ -10,8 +10,11 @@
     function ProductsShopController($routeParams, comBarrioFactory) {
         let vm = this
         let categories = []
-        const idShop = $routeParams.id
         let listItems = []
+        let reviewUser = false
+        let reviewMail = false
+        const idShop = $routeParams.id
+
         comBarrioFactory.getShopProducts(idShop)
             .then(function(response) {
                 vm.shop = response
@@ -33,10 +36,10 @@
                 let findpos = false
                 for (pos = listItems.length - 1; pos >= 0; pos--) {
                     if (listItems[pos].search(product) > 0) {
-                        if (vm.selItems[product] == 0) {
-                            listItems.splice(pos, 1)
-                        } else {
+                        if (vm.selItems[product] > 0) {
                             listItems[pos] = insText
+                        } else {
+                            listItems.splice(pos, 1)
                         }
                         findpos = true
                     }
@@ -48,11 +51,14 @@
             vm.listItems = listItems
         }
 
-        vm.getUserMail = () => {
-            vm.mostrarBtnEnvio = false
-            if (vm.nameUserMail != "") {
-                vm.mostrarBtnEnvio = true   
-            }
+        vm.checkUserName = () => {
+            reviewUser =  (vm.nameUserOrder != "") ? true : false
+            vm.showBtnSend = (reviewUser && reviewMail) ? true : false
+        }
+
+        vm.checkUserMail = () => {
+            reviewMail =  (vm.nameUserMail.search("@") > 0) ? true : false
+            vm.showBtnSend = (reviewUser && reviewMail) ? true : false
         }
 
         vm.sendMail = (e) => {
@@ -63,12 +69,7 @@
             const prepareOrder = vm.prepareOrder
             const userName = vm.nameUserOrder
             const userMail = vm.nameUserMail
-            const userPhone = vm.nameUserPhone
-
-            vm.mostrarBtnEnvio = false
-            if (vm.nameUserMail != "") {
-                vm.mostrarBtnEnvio = true   
-            }
+            let toEmail = ""
 
             let listOrder = "<p><strong>LISTA DE PRODUCTOS</strong></p>"
             for (let pos = 0; pos < listItems.length; pos++) {
@@ -81,9 +82,15 @@
                 }
             }
             listOrder += "<p>" + prepareOrder + "</p>"
-            console.log(listOrder)
+            
+            toEmail = shopEmail
+            comBarrioFactory.sendMailOrderShop(shopName, toEmail, listOrder, userName)
+                .then(() => {
+                    console.log('Email sent from the controller')
+                })
 
-            comBarrioFactory.sendMailOrder(shopName, shopEmail, listOrder, userName, userMail, userPhone)
+            toEmail = userMail
+            comBarrioFactory.sendMailOrderUser(shopName, toEmail, listOrder, userName)
                 .then(() => {
                     console.log('Email sent from the controller')
                 })

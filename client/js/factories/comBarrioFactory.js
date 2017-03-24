@@ -23,19 +23,25 @@
           })
       }
 
-      function sendMailOrder(shopName,shopEmail,listOrder,userName,userMail,userPhone){
+      function sendMailOrderShop(shopName, toEmail, listOrder, userName){
         var url = constApp.urlMain + '/sendMail'
-        var data = {shopName,shopEmail,listOrder,userName,userMail,userPhone}
+        var data = {shopName, toEmail, listOrder, userName}
         return $http.post(url,data)
-        .then(
-          console.log("send a email")
-        )
+        .then()
+      }
+
+       function sendMailOrderUser(shopName, toEmail, listOrder, userName){
+        var url = constApp.urlMain + '/sendMail'
+        var data = {shopName, toEmail, listOrder, userName}
+        return $http.post(url,data)
+        .then()
       }
 
       return {
         getShopsZipCode: getShopsZipCode,
         getShopProducts: getShopProducts,
-        sendMailOrder: sendMailOrder,
+        sendMailOrderShop: sendMailOrderShop,
+        sendMailOrderUser: sendMailOrderUser,
       }
     })
 })()

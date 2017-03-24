@@ -20,12 +20,6 @@
         controller: 'orderShopController',
         controllerAs: 'vm'
       })
-
-//       .when('/sendMail', {
-// //        templateUrl: 'views/sendMailModal.html',
-//         controller: 'sendMailController',
-//         controllerAs: 'vm',
-//       })
      
       .otherwise({
         redirectTo: '/'

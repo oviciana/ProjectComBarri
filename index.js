@@ -56,8 +56,9 @@ app.get('/shops/:zipCode/:bussinessType', (req, res) => {
 })
 
 app.post('/sendMail', (req, res) => {
-    console.log("pulsado click en enviar correo")
-        // create reusable transporter object using the default SMTP transport
+
+    const {shopName, toEmail, listOrder, userName} = req.body
+    
     let transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
@@ -65,18 +66,15 @@ app.post('/sendMail', (req, res) => {
             pass: 'Skylab201701'
         }
     });
-
-    const {shopName,shopEmail,listOrder,userName,userMail,userPhone} = req.body
-
+    
     let mailOptions = {
         from: `combarrio@gmail.com`,
-        to: `${shopEmail}`,
-        subject: `${userName}` + ` ha hecho un encargo (subject)`,
+        to: `${toEmail}`,
+        subject: `${userName}` + ` ha hecho un encargo a ` + `${shopName}`,
         html: `${listOrder}`
     };
 
     transporter.sendMail(mailOptions, (error, info) => {
-        console.log("transporter")
         if (error) {
             return console.log(error);
         }

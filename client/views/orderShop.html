@@ -30,8 +30,6 @@
                 <textarea class="insCommentsOrdere form-control" rows="3" placeholder="indica preparación, hora de recogida o cualquier otra nota relevante" ng-model="vm.prepareOrder"></textarea>
             </div>
             <button class="btn_ConfirmOrder" id="btn_ConfirmOrder" data-toggle="modal" data-target="#sendOrder" id="launch">Confirmar Pedido</button>
-            <!-- <button class="btn_ConfirmOrder" id="btn_ConfirmOrder" data-toggle="modal" data-target="#sendOrder" id="launch"><a style="color: black" href="#!/sendMail">Confirmar Pedido</a></button> -->
-            <!-- <button id="btn_ConfirmOrder"><a style="color: black" href="sendMail.html">Confirmar Pedido</a></button>-->
         </div>
     </div>
     <div class="col-md-3 col-sm-4 memoPad img-responsive">
@@ -68,17 +66,17 @@
                 <h4>Estos datos se unirán a tu lista de pedido</h4>
                 <div class="form-group">
                     <label for="userNameOrder" class="control-label">Nombre</label>
-                    <input class="userNameOrder form-control" id="userNameOrder" type="string" ng-model="vm.nameUserOrder">
+                    <input class="userNameOrder form-control" id="userNameOrder" type="string" ng-model="vm.nameUserOrder" ng-change="vm.checkUserName()" placeholder="--campo requerido para enviar correo--">
                 </div>
                 <div class="form-group">
                     <label for="userMailOrder" class="control-label">Correo Electrónico</label>
-                    <input class="userMailOrder form-control" id="userMailOrder" type="string" ng-model="vm.nameUserMail" ng-change="vm.getUserMail()">
+                    <input class="userMailOrder form-control" id="userMailOrder" type="string" ng-model="vm.nameUserMail" ng-change="vm.checkUserMail()" placeholder="--campo requerido para enviar correo--">
                 </div>
             </div>
             <div class="modal-footer">
                 <form class="sendMail">
                     <button id="btnCancelOrder" type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close">Cancelar</button>
-                    <button id="btnSendOrder" type="submit" class="btn btn-primary ng-hide" ng-click="vm.sendMail($event)" onclick="$('.modal').modal('hide')" ng-show="vm.mostrarBtnEnvio">Enviar Correo</button>
+                    <button id="btnSendOrder" type="submit" class="btn btn-primary ng-hide" ng-click="vm.sendMail($event)" onclick="$('.modal').modal('hide')" ng-show="vm.showBtnSend">Enviar Correo</button>
                 </form>
             </div>
         </div>
