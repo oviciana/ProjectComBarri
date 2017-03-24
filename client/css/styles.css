@@ -34,8 +34,7 @@ hr {
 }
 
 .navbar {
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin: 0;
 }
 
 .navLogo {
@@ -47,11 +46,13 @@ hr {
     background-image: url("../img/barri.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    height: 650px;
 }
 
 .banner-section h1 {
     margin: 0px;
     margin-bottom: 30px;
+    text-shadow: 5px 1px 2px black;
 }
 
 .mainHead {
@@ -68,17 +69,19 @@ hr {
     color: white;
 }
 
-.text-info {
+.banner-msg {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     font-family: 'Sofia';
     font-size: 25px;
-    background-color: black;
-    opacity: 0.6;
-    padding: 10px;
     color: white;
+}
+
+.darkify {
+    background-color: rgba(0,0,0,.7);
+    padding: 30px;
 }
 
 .formZipCode {
@@ -98,11 +101,11 @@ hr {
     font-size: 20px;
 }
 
-.getZipCode {
-    width: 80px;
-    height: 33px;
-    font-size: 15px;
-}
+// .getZipCode {
+//     width: 80px;
+//     height: 33px;
+//     font-size: 15px;
+// }
 
 .showMap {
     margin-bottom: 20px;
@@ -146,41 +149,34 @@ hr {
     border-bottom: 2px inset #A7A7A7
 }
 
+.memoPadBody {
+    padding: 20px;
+}
+
 .memoPadBody li {
     list-style: none;
     padding-left: 30px;
 }
 
-.selectProducts {
-    height: 90px;
-    padding: 0px;
-    display: flex;
-    flex-direction: column;
-    /*   align-content: space-around;*/
-    align-items: center;
-    background-size: 100%;
-    background-repeat: no-repeat;
-}
-
 .productBuyText {
-    background-color: black;
-    opacity: 0.7;
-    display: flex;
-    align-items: center;
+    width: 100%;
 }
 
 .productBuyText h4 {
+    background-color: #212121;
     color: white;
-    margin: 0px;
-    opacity: 1;
-    display: flex;
-    align-items: center;
+    text-align: center;
+    padding: 5px;
 }
 
 .productBuyQuantity {
     display: flex;
     align-items: center;
-    margin-top: 40px;
+    margin: 10px;
+}
+
+.productBuyQuantity input {
+    margin-right: 10px;
 }
 
 .btn_FirstSearchShops {
@@ -277,9 +273,6 @@ hr {
     width: : 0 auto;
 }
 
-.nav-footer{
-    margin-top: 20px;
-}
 
 .copyright {
     min-height: 40px;
@@ -309,4 +302,43 @@ hr {
 #accordion {
     padding-left: 0px;
     padding-right: 0px;
+}
+
+.filter-results {
+    padding:20px
+}
+
+.filter-results label {
+    font-size: 1.5em;
+}
+
+.list-results {
+    padding: 30px;
+}
+
+.order-form {
+    padding: 30px 0;
+}
+
+.selectProducts {
+    border: 1px solid #ccc;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin:10px;
+    width: 150px;
+}
+
+.list-products {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.image-product {
+
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 85px;
 }

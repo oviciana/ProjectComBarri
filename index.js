@@ -11,7 +11,6 @@ console.log(shopProducts)
     // const userOrders = require('./server/models/userOrders.js')
 const PORT = process.env.PORT || 3010
 const urlDB = process.env.DB_URI || 'mongodb://localhost:27017/combarrio'
-const password = process.env.PASS
 const app = express()
 
 mongoose.Promise = global.Promise
@@ -64,7 +63,7 @@ app.post('/sendMail', (req, res) => {
         service: 'gmail',
         auth: {
             user: 'combarrio@gmail.com',
-            pass: `${password}`
+            pass: 'Skylab201701'
         }
     });
     

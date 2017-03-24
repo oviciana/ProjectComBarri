@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container order-form">
     <h3>{{ vm.shop.name }}</h3>
     <h5 class="openHours"><strong>Horario:</strong> {{ vm.shop.openHours}}</h5>
     <h5 class="adOrders"><strong>Avisos:</strong> {{vm.shop.acceptOrders}}</h5>
@@ -10,10 +10,11 @@
                     <h3 class="panel-title" data-toggle="collapse" data-target="#collapse"><strong>{{ foundCategory }}</strong></h3>
                 </div>
                 <div class="panel-body" ng-show="vm.accordion.current == foundCategory">
-                    <div class="row">
-                        <div class="selectProducts col-md-3 col-sm-4" ng-repeat="product in vm.shop.idShopProducts.products | filter: foundCategory" style="background-image: url({{product.photoURL}});">
+                    <div class="row list-products">
+                        <div class="selectProducts" ng-repeat="product in vm.shop.idShopProducts.products | filter: foundCategory">
+                            <div class="image-product" style="background-image: url({{product.photoURL}});"></div>
                             <div class="productBuyText">
-                                <h4><strong>{{product.name}}</strong></h4>
+                                <h4>{{product.name}}</h4>
                             </div>
                             <div class="productBuyQuantity">
                                 <input class="insQuantityOrder" type="number" step="1" value="0" min="0" ng-model="vm.selItems[product.name]" ng-change="vm.readItems()">

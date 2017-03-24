@@ -1,17 +1,24 @@
-<div class="container-fluid">
+<div class="container">
     <div class="row">
         <div class="col-md-8">
-            <div class="row">
+            <div class="row filter-results">
                 <div class="col-md-6 form-inline">
                     <label class="control-label" for="getZipCode">Codi Postal</label>
-                    <div class="input-group">
-                        <input class="getZipCode" id="getZipCode" name="ZipCode" class="form-control" type="text" value="{{ vm.zipCode }}" ng-model="vm.zipCode">
-                        <span class="input-group-btn">
+                        <div class="input-group">
+                            <input class="form-control" id="getZipCode" name="ZipCode" type="text" value="{{ vm.zipCode }}" ng-model="vm.zipCode">
+
+                              <span class="input-group-btn">
+                                <a href="#!/shops/zipCode/{{vm.zipCode}}" class="btn btn-default" type="button">Buscar!</a>
+                              </span>
+                        </div><!-- /input-group -->
+
+
+                       <!--  <span class="input-group-btn">
                         <button class="btn_SearchShops" id="btn_SearchShops" type="submit">
-                            <a style="text-decoration: none; color: black;" role="button" href="#!/shops/zipCode/{{vm.zipCode}}">Buscar</a>
+                            <a style="text-decoration: none; color: black;" role="button" >Buscar</a>
                         </button>
-                    </span>
-                    </div>
+                    </span>-->
+
                 </div>
                 <div class="col-md-6 form-inline">
                     <label class="control-label" for="selectCategory">Filtra tipo negocio</label>
@@ -21,12 +28,14 @@
                     </select>
                 </div>
             </div>
+            <h3>Mostrando {{ filteredResults.length }} de {{ vm.shopsFound.length }} resultados para el Codigo Postal {{ vm.zipCode }}</h3>
             <div class="showMap" id="map">
                 <ng-map class="googleMaps" id="main-map" center="41.3721731,2.1414897" zoom="12"></ng-map>
             </div>
         </div>
-        <div class="col-md-4">
-            <div ng-repeat="shop in vm.shopsFound | filter:vm.query | orderBy:'bussinessType'">
+        <div class="col-md-4 list-results">
+        <!-- filteredResults = (results | filter:filterPrice -->
+            <div ng-repeat="shop in filteredResults = (vm.shopsFound | filter:vm.query | orderBy:'bussinessType')">
                 <a style="text-decoration: none; color: black; font-size: 20px" href="#!/shop/{{shop._id}}"><strong>{{ shop.bussinessType }}  {{ shop.name }} </strong><i class="glyphicon glyphicon-hand-right"></i></a>
                 <!-- <button class="btn_SelectShop" id="btn_SelectShop" type="button"><a style="text-decoration: none; color: black;" href="#!/shop/{{shop._id}}">{{ shop.bussinessType }}  {{ shop.name }}  <i class="glyphicon glyphicon-chevron-right"></i></a>
                 </button> -->

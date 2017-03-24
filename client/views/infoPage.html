@@ -3,7 +3,7 @@
         <h1 class="mainTitle text-center">Compras en tu barrio</h1>
         <div class="formZipCode">
             <div class="input-group">
-                <input class="firstZipCode form-control" autocomplete="off" id="getZipCode" name="zipCode" placeholder="Código postal" ng-model="zipCode">
+                <input class="firstZipCode form-control" autocomplete="off" id="getZipCode" name="zipCode" placeholder="Código postal" ng-model="zipCode" ng-init="zipCode='08014'">
                 <div class="input-group-btn">
                     <button class="btn_FirstSearchShops" id="btn_SearchShops" type="submit">
                         <a style="text-decoration: none; color: black;" role="button" href="#!/shops/zipCode/{{zipCode}}">Buscar</a>
@@ -12,9 +12,13 @@
             </div>
         </div>
     </div>
-    <div class="text-info text-center">
-        <h1>Ahorra tiempo en tus compras.</h1>
-        <h2>ComBarrio te permite hacer encargos a las tiendas de tu barrio para que tu compra esté preparada para que la pases a recoger a la hora que indiques.</h2>
-        <h2>ComBarrio envía tu lista de la compra al comercio de tu barrio que elijas vía correo electrónico.</h2>
+    <div class="banner-msg text-center">
+        <div class="darkify">
+            <div class="container">
+                <h1>Ahorra tiempo en tus compras.</h1>
+                <h2>ComBarrio te permite hacer encargos a las tiendas de tu barrio para que tu compra esté preparada para que la pases a recoger a la hora que indiques.</h2>
+                <h2>ComBarrio envía tu lista de la compra al comercio de tu barrio que elijas vía correo electrónico.</h2>
+            </div>
+        </div>
     </div>
 </div>

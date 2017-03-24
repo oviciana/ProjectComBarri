@@ -82,7 +82,7 @@
                 }
             }
             listOrder += "<p>" + prepareOrder + "</p>"
-            
+
             toEmail = shopEmail
             comBarrioFactory.sendMailOrderShop(shopName, toEmail, listOrder, userName)
                 .then(() => {
@@ -92,7 +92,7 @@
             toEmail = userMail
             comBarrioFactory.sendMailOrderUser(shopName, toEmail, listOrder, userName)
                 .then(() => {
-                    console.log('Email sent from the controller')
+                    alert('Check your inbox!! You have an email')
                 })
         }
     }
