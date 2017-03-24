@@ -2,25 +2,16 @@
     <div class="row">
         <div class="col-md-8">
             <div class="row filter-results">
-                <div class="col-md-6 form-inline">
+                <div class="col-md-6">
                     <label class="control-label" for="getZipCode">Codi Postal</label>
-                        <div class="input-group">
-                            <input class="form-control" id="getZipCode" name="ZipCode" type="text" value="{{ vm.zipCode }}" ng-model="vm.zipCode">
-
-                              <span class="input-group-btn">
+                    <div class="input-group">
+                        <input class="form-control" id="getZipCode" name="ZipCode" type="text" value="{{ vm.zipCode }}" ng-model="vm.zipCode">
+                        <span class="input-group-btn">
                                 <a href="#!/shops/zipCode/{{vm.zipCode}}" class="btn btn-default" type="button">Buscar!</a>
                               </span>
-                        </div><!-- /input-group -->
-
-
-                       <!--  <span class="input-group-btn">
-                        <button class="btn_SearchShops" id="btn_SearchShops" type="submit">
-                            <a style="text-decoration: none; color: black;" role="button" >Buscar</a>
-                        </button>
-                    </span>-->
-
+                    </div>
                 </div>
-                <div class="col-md-6 form-inline">
+                <div class="col-md-6">
                     <label class="control-label" for="selectCategory">Filtra tipo negocio</label>
                     <select id="selectCategory" name="selectCategory" class="form-control" ng-change="vm.filterMap()" ng-model="vm.query">
                         <option value="">-Todos-</option>
@@ -34,7 +25,7 @@
             </div>
         </div>
         <div class="col-md-4 list-results">
-        <!-- filteredResults = (results | filter:filterPrice -->
+            <!-- filteredResults = (results | filter:filterPrice -->
             <div ng-repeat="shop in filteredResults = (vm.shopsFound | filter:vm.query | orderBy:'bussinessType')">
                 <a style="text-decoration: none; color: black; font-size: 20px" href="#!/shop/{{shop._id}}"><strong>{{ shop.bussinessType }}  {{ shop.name }} </strong><i class="glyphicon glyphicon-hand-right"></i></a>
                 <!-- <button class="btn_SelectShop" id="btn_SelectShop" type="button"><a style="text-decoration: none; color: black;" href="#!/shop/{{shop._id}}">{{ shop.bussinessType }}  {{ shop.name }}  <i class="glyphicon glyphicon-chevron-right"></i></a>
