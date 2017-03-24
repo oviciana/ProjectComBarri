@@ -1,31 +1,3 @@
-/* design all the boxes (developing)---------------- */
-
-
-/*
-* {
-    border: 1px solid black;
-    padding: 0px;
-}
-*/
-
-
-/* blink efect (developing)--------------------------*/
-
-
-/*.pendingResolve {
-    animation: blinker 3s linear infinite;
-    color: red;
-}
-
-@keyframes blinker {
-    50% {
-        opacity: 0;
-    }
-}*/
-
-
-/*---------------------------------------------------*/
-
 hr {
     background-color: grey;
     height: 2px;
@@ -101,11 +73,11 @@ hr {
     font-size: 20px;
 }
 
-// .getZipCode {
+/*// .getZipCode {
 //     width: 80px;
 //     height: 33px;
 //     font-size: 15px;
-// }
+// }*/
 
 .showMap {
     margin-bottom: 20px;

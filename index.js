@@ -3,12 +3,12 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const nodemailer = require('nodemailer')
-    // const users = require('./server/models/users.js')
 
 const shopProducts = require('./server/models/shopProducts.js')
 const shops = require('./server/models/shops.js')
 console.log(shopProducts)
-    // const userOrders = require('./server/models/userOrders.js')
+
+const password = process.env.PASS
 const PORT = process.env.PORT || 3010
 const urlDB = process.env.DB_URI || 'mongodb://localhost:27017/combarrio'
 const app = express()
@@ -63,7 +63,7 @@ app.post('/sendMail', (req, res) => {
         service: 'gmail',
         auth: {
             user: 'combarrio@gmail.com',
-            pass: 'Skylab201701'
+            pass: `${password}`
         }
     });
     
