@@ -1,9 +1,10 @@
 [![Skylab](https://github.com/Iggy-Codes/logo-images/blob/master/logos/skylab-56.png)](http://www.skylabcoders.com/)
-
 [![AngularJS](https://github.com/Iggy-Codes/logo-images/blob/master/logos/angularjs.png)](https://angularjs.org/)
 [![HTML5, CSS3 and JS](https://github.com/Iggy-Codes/logo-images/blob/master/logos/html5-css3-js.png)](https://www.w3.org/)
 [![Bootstrap](https://github.com/Iggy-Codes/logo-images/blob/master/logos/bootstrap.png)](http://getbootstrap.com/)
-
+[![ExpressJs](https://cdnp-2f3a.kxcdn.com/blog/wp-content/uploads/2015/11/Express-JS-101.png)](https://expressjs.com/)
+[![NodeJs](https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSxcvI2vvtITqK5Xz-QGiUi7kb9bWjlkE-kOQV-lwbXg1NrJo2A)](https://nodejs.org/)
+[![Mongodb](https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR1coxJ8nGNec1zfzLQOXSgXzKnR4FrKQKFM4He3PD58WCrD0p8)](https://www.mongodb.com)
 [![Bower](https://github.com/Iggy-Codes/logo-images/blob/master/logos/bower.png)](https://bower.io//)
 
 
